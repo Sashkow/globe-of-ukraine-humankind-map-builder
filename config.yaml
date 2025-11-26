@@ -1,0 +1,200 @@
+# Humankind Ukraine Map Configuration
+# This file contains all configurable parameters for the Ukraine map generation
+
+# Map Grid Dimensions (Humankind maximum)
+grid:
+  width: 150  # Number of hex columns
+  height: 88  # Number of hex rows
+  total_hexes: 13200  # width × height
+
+# Ocean/Buffer Margins
+# Number of hexes to reserve on each side for ocean/buffer zones
+margins:
+  # New configuration - thinner margins
+  new:
+    north: 6  # Top margin in hexes
+    south: 6  # Bottom margin in hexes
+    east: 6   # Right margin in hexes
+    west: 6   # Left margin in hexes
+    description: "Thin 6-hex margins for maximum Ukraine coverage"
+
+  # Original configuration - generous margins
+  original:
+    # Original bounds: 19.0-43.5°E, 42.5-54.0°N
+    # Resulted in 4,691 hexes (35.5% coverage)
+    description: "Original generous margins for aesthetic appearance"
+
+# Geographic Bounds
+# These are lat/lon boundaries for the map
+bounds:
+  # New bounds - Ukraine's actual geographic extent
+  # This naturally provides margins because Ukraine's shape isn't rectangular
+  new:
+    min_lon: 22.0   # Western edge (Ukraine's western border)
+    max_lon: 40.5   # Eastern edge (Ukraine's eastern border)
+    min_lat: 44.0   # Southern edge (Crimea southern coast)
+    max_lat: 52.5   # Northern edge (Ukraine's northern border)
+    description: "Tight bounds matching Ukraine's extent - natural margins from irregular shape"
+
+  # Original bounds - generous buffer
+  original:
+    min_lon: 19.0   # Western edge
+    max_lon: 43.5   # Eastern edge
+    min_lat: 42.5   # Southern edge
+    max_lat: 54.0   # Northern edge
+    description: "Original bounds with generous buffer zones"
+
+# Active Configuration
+# Which configuration to use
+active_config: "new"  # Options: "new" or "original"
+
+# Ukraine Geographic Data
+ukraine:
+  # Data file paths
+  raions_file: "data/ukraine_raions.geojson"
+  raion_count: 139  # Including Kyiv, Sevastopol, Crimea
+  oblast_count: 27
+
+  # Real-world dimensions (approximate)
+  width_km: 1300   # West to East
+  height_km: 900   # North to South
+  area_km2: 603628 # Total area
+
+  # Administrative divisions
+  admin_levels:
+    - level: 0
+      name: "Country"
+      count: 1
+    - level: 1
+      name: "Oblast"
+      count: 27
+    - level: 2
+      name: "Raion"
+      count: 139
+
+# Coordinate Systems
+projection:
+  # Input coordinate system
+  input_crs: "EPSG:4326"  # WGS84 (latitude/longitude)
+
+  # Projected coordinate system for accurate distance calculations
+  projected_crs: "EPSG:32636"  # UTM Zone 36N (meters)
+  description: "UTM Zone 36N chosen because it covers Ukraine"
+
+# Hexagon Properties
+hexagon:
+  orientation: "flat-top"  # Options: "flat-top" or "pointy-top"
+  coordinate_system: "odd-q"  # Odd-q offset coordinates
+
+  # Size will be calculated based on grid dimensions and bounds
+  # Approximate expected values:
+  expected_size_km: 7.0  # Radius from center to vertex
+  expected_width_km: 14.0  # Flat edge to flat edge (horizontal)
+  expected_height_km: 12.0  # Point to point (vertical)
+
+# Graph Coloring
+coloring:
+  # For visualization - ensure adjacent regions have different colors
+  max_colors: 20  # Maximum colors available (from matplotlib tab20)
+  algorithm: "greedy"  # Greedy graph coloring
+  strategy: "most_constrained_first"  # Color most constrained regions first
+
+# Major Cities
+# These will be marked on visualizations
+cities:
+  - name: "Kyiv"
+    lat: 50.4501
+    lon: 30.5234
+    is_capital: true
+  - name: "Kharkiv"
+    lat: 49.9935
+    lon: 36.2304
+  - name: "Odesa"
+    lat: 46.4825
+    lon: 30.7233
+  - name: "Dnipro"
+    lat: 48.4647
+    lon: 35.0462
+  - name: "Lviv"
+    lat: 49.8397
+    lon: 24.0297
+  - name: "Zaporizhzhia"
+    lat: 47.8388
+    lon: 35.1396
+  - name: "Kryvyi Rih"
+    lat: 47.9105
+    lon: 33.3915
+  - name: "Mykolaiv"
+    lat: 46.9750
+    lon: 31.9946
+  - name: "Mariupol"
+    lat: 47.0971
+    lon: 37.5432
+  - name: "Luhansk"
+    lat: 48.5670
+    lon: 39.3171
+  - name: "Donetsk"
+    lat: 48.0156
+    lon: 37.8028
+  - name: "Vinnytsia"
+    lat: 49.2328
+    lon: 28.4681
+  - name: "Simferopol"
+    lat: 44.9521
+    lon: 34.1024
+  - name: "Sevastopol"
+    lat: 44.6160
+    lon: 33.5253
+  - name: "Chernihiv"
+    lat: 51.4982
+    lon: 31.2893
+
+# Visualization Settings
+visualization:
+  # Output directory for test visualizations
+  output_dir: "tests/test_outputs"
+
+  # Image settings
+  dpi: 150
+  figsize_width: 24
+  figsize_height: 14
+
+  # Hex rendering
+  hex_pixel_size: 10  # Size in pixels for rigid hex grid visualizations
+  hex_edge_width: 0.3
+  hex_edge_color: "black"
+
+  # Colors
+  ocean_color: [0.85, 0.85, 0.85]
+  ocean_alpha: 0.4
+  land_alpha: 0.7
+  city_marker_color: "red"
+  city_marker_size: 4
+
+# Test Output Paths
+test_outputs:
+  phase2:
+    - "ukraine_bounds_visualization.png"
+    - "ukraine_grid_with_cities.png"
+    - "ukraine_grid_coordinates.png"
+    - "ukraine_distance_rings_from_kyiv.png"
+  phase3:
+    - "ukraine_raion_hex_map.png"
+    - "ukraine_rigid_hex_grid.png"
+    - "ukraine_rigid_hex_grid_oblasts.png"
+
+# Expected Results (for validation)
+expected_results:
+  original:
+    ukraine_hexes: 4691
+    coverage_percent: 35.5
+    hex_size_km: 7.03
+    hexes_per_raion: 34
+
+  new:
+    ukraine_hexes: 8102  # Measured
+    coverage_percent: 61.4  # Actual coverage
+    hex_size_km: 5.20  # Measured
+    hex_width_km: 10.39  # Flat edge to flat edge
+    hex_height_km: 9.00  # Point to point
+    hexes_per_raion: 58.3  # Within target range of 50-90
