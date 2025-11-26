@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?amplitude-serialization-serializer version="4"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Brain, Amplitude.AI" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Hsm.StateMachineContext`2+TransitionContext, Amplitude.AI" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Framework.Simulation.BaseSimulationEntity, Amplitude.Framework" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Framework.Simulation.Collections.DescriptorCollection, Amplitude.Framework" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.AnalysisData.MajorEmpire.MajorEmpireData, Amplitude.Mercury.AI.Brain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.DoCulturalAction, Amplitude.Mercury.AI.Brain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Data.Simulation.SimulationEventEffect_AddNarratorSentence, Amplitude.Mercury.Data" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveDescriptor, Amplitude.Mercury.Firstpass" number="5"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveSessionSlotDescriptor, Amplitude.Mercury.Firstpass" number="5"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveSlotsDescriptor, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ArmyStealTerritoryActionInfo, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.AvailableGrievanceCollection, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentAftermathInfo, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentSufferedNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.DistrictInfo, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EditorOrderCreateArmyAt, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EditorOrderForceWar, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireAchievementStatistics, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireStatistics, Amplitude.Mercury.Firstpass" number="3"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireWarPeriod, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.LootInfo, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.NaturalWonderDiscoveredNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.OnGoingDemandCollection, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.PopulationStolenNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligionChangedNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligiousConversionEndedNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligiousConversionStartedNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SurrenderProposition, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SurrenderTerritoryInfo, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TenetChosenNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeNotificationData, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadDestroyedDestinationNotificationData, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadDestroyedOriginNotificationData, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadFreezedDestinationNotificationData, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadFreezedOriginNotificationData, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Sandbox.Sandbox, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.AirStrike, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArtilleryStrike, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Battle, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleRepository, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfCommunication, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfDefense, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfDevelopment, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfForeignAffairs, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfResources, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfTheInterior, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DiplomaticMoral, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.EndGameController, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MajorEmpire, Amplitude.Mercury.Firstpass" number="8"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MinorEmpire, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NarratorAncillary, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Participant_Army, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Region+SurroundingTerritoryCollection, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Settlement, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SettlementStatusOnEventCollection, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SimulationEventEffect_AddEmpireBattleAbility, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.World, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.StateShare.StateShareHeader, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.Landmark, Amplitude.Mercury.Terrain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.LandmarkDatabase, Amplitude.Mercury.Terrain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.SpawnPoint, Amplitude.Mercury.Terrain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerrainSave, Amplitude.Mercury.Terrain" number="3"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerrainSaveDescriptor, Amplitude.Mercury.Terrain" number="3"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.Territory, Amplitude.Mercury.Terrain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerritoryDatabase, Amplitude.Mercury.Terrain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.WorldMapEntitiesProvider, Amplitude.Mercury.Terrain" number="1"?>
+<Document>
+    <TerrainSave>
+        <FormatRevision>10</FormatRevision>
+        <Width>58</Width>
+        <Height>36</Height>
+        <UseMapCycling>true</UseMapCycling>
+        <UseProceduralMountainChains>false</UseProceduralMountainChains>
+        <BiomeNames Length="10">
+            <String>Arctic</String>
+            <String>Badlands</String>
+            <String>Desert</String>
+            <String>Grassland</String>
+            <String>Mediterranean</String>
+            <String>Savanna</String>
+            <String>Taiga</String>
+            <String>Temperate</String>
+            <String>Tropical</String>
+            <String>Tundra</String>
+        </BiomeNames>
+        <TerrainTypeNames Length="15">
+            <String>CityTerrain</String>
+            <String>CoastalWater</String>
+            <String>DryGrass</String>
+            <String>Forest</String>
+            <String>Lake</String>
+            <String>Mountain</String>
+            <String>MountainSnow</String>
+            <String>Ocean</String>
+            <String>Prairie</String>
+            <String>RockyField</String>
+            <String>RockyForest</String>
+            <String>Sterile</String>
+            <String>StoneField</String>
+            <String>Wasteland</String>
+            <String>WoodLand</String>
+        </TerrainTypeNames>
+        <POINames Length="54">
+            <String>None</String>
+            <String>POI_NaturalModifier01</String>
+            <String>POI_NaturalModifier02</String>
+            <String>POI_NaturalModifier03</String>
+            <String>POI_NaturalModifier04</String>
+            <String>POI_NaturalModifier05</String>
+            <String>POI_NaturalModifier06</String>
+            <String>POI_NaturalModifier07</String>
+            <String>POI_NaturalModifier08</String>
+            <String>POI_NaturalModifier09</String>
+            <String>POI_NaturalModifier10</String>
+            <String>POI_NaturalModifier11</String>
+            <String>POI_NaturalModifier12</String>
+            <String>POI_NaturalModifier13</String>
+            <String>POI_NaturalModifier14</String>
+            <String>POI_NaturalModifier15</String>
+            <String>POI_NaturalModifier16</String>
+            <String>POI_NaturalModifier17</String>
+            <String>POI_NaturalModifier18</String>
+            <String>POI_NaturalModifier19</String>
+            <String>POI_NaturalModifier20</String>
+            <String>POI_NaturalModifier21</String>
+            <String>POI_NaturalModifier22</String>
+            <String>POI_NaturalModifier23</String>
+            <String>POI_NaturalModifier24</String>
+            <String>POI_ResourceDeposit01</String>
+            <String>POI_ResourceDeposit02</String>
+            <String>POI_ResourceDeposit03</String>
+            <String>POI_ResourceDeposit04</String>
+            <String>POI_ResourceDeposit05</String>
+            <String>POI_ResourceDeposit06</String>
+            <String>POI_ResourceDeposit07</String>
+            <String>POI_ResourceDeposit08</String>
+            <String>POI_ResourceDeposit11</String>
+            <String>POI_ResourceDeposit12</String>
+            <String>POI_ResourceDeposit13</String>
+            <String>POI_ResourceDeposit14</String>
+            <String>POI_ResourceDeposit15</String>
+            <String>POI_ResourceDeposit16</String>
+            <String>POI_ResourceDeposit17</String>
+            <String>POI_ResourceDeposit18</String>
+            <String>POI_ResourceDeposit19</String>
+            <String>POI_ResourceDeposit20</String>
+            <String>POI_ResourceDeposit21</String>
+            <String>POI_ResourceDeposit22</String>
+            <String>POI_ResourceDeposit23</String>
+            <String>POI_ResourceDeposit24</String>
+            <String>POI_ResourceDeposit25</String>
+            <String>POI_ResourceDeposit26</String>
+            <String>POI_ResourceDeposit27</String>
+            <String>POI_ResourceDeposit28</String>
+            <String>POI_ResourceDeposit29</String>
+            <String>POI_ResourceDeposit30</String>
+            <String>POI_ResourceDeposit31</String>
+        </POINames>
+        <NaturalWonderNames Length="14">
+            <String>DanakilDesert</String>
+            <String>GreatBarrierReef</String>
+            <String>GreatBlueHole</String>
+            <String>HalongBay</String>
+            <String>KawahIjen</String>
+            <String>LakeBaikal</String>
+            <String>LakeHillier</String>
+            <String>MountEverest</String>
+            <String>MountMulu</String>
+            <String>MountRoraima</String>
+            <String>MountVesuvius</String>
+            <String>PeritoMorenoGlacier</String>
+            <String>Vinicunca</String>
+            <String>Yellowstone</String>
+        </NaturalWonderNames>
+        <LandmarksDefinitionNames Length="5">
+            <String>Landmark_Desert</String>
+            <String>Landmark_Forest</String>
+            <String>Landmark_Lake</String>
+            <String>Landmark_Mountain</String>
+            <String>Landmark_River</String>
+        </LandmarksDefinitionNames>
+        <ElevationTexture.Width>58</ElevationTexture.Width>
+        <ElevationTexture.Height>36</ElevationTexture.Height>
+        <ElevationTexture.Format>4</ElevationTexture.Format>
+        <ElevationTexture.Bytes Length="1261">iVBORw0KGgoAAAANSUhEUgAAADoAAAAkCAYAAADYZynDAAAEtElEQVRoBc2Zv24cNxDGl3tyjCR2HcDVVqnTBYgbP0KKPIAewbUrV65Tpc6jqApSukp9gAEDruM4USQt/f2GnF3uSjJ05Mq+gbkkZ4fkfPNveXIID7t7p1CcEP4vJnkYv7qBd53VxDlpWn2HxQ5yAXBYLgz75RzgrItLdtMs3JdHUfQ2cKEXiHGl9+k8H1/N461GOvLzEiChnfpezeeJm+b9C59t199b6Jo3h6WigArfqv2TwpLQLD3Le/3rrpbLNpmx7+bkeekb71TwLEUeJJDOX/eAJqLxtHvVUmAtWDHf3KNTbg5Jm5Nc1Y1PdeVEuSwIdPeLmnjxXL0oPE6GcEPZmhzGjFtyd/Ni1PP5GNREeNGUZaw2VVGfIHsq/qP8TiFdyl+uC5bEa8E2exTFnMq8JFxLYFETx2cvMkg82gmgkwPdOk83y9HwRKoOrm4C6UobsNKkvIB+VxNgwrinSMHLtFN/spl2KWN874N7U2yQgihb5uJNO33IHsaD7urTLLjyKlwXyRLNXWnngzdDGfdCaXx4kdCEAOHjr7N8EZcG6L1klKe+Vwlyp7VXuVi13JhK/VDrIAqDQk7a9bnosJkpCzAAQhobz0Em7vxErjQGb9wwOXenaHH+vPrOoyagWJ5PA0AYl0XSChPg1OIKpAF3FaW87cMeJRCN7RMkPvIOtnupSQXVAx3kSZTJucnZBg5lv2GWFCx7YypsDZi86L3x/VGCzTwDmsesqaF6oHsp6uHJyVJwUoIclBevEXzKqci8mtcb4MSe99AcvnufnhSx73SWPaRrujCEQXpLA6u6NwErNflOE2T+TUyMBJCR0PeK/WwGlqTmJ0AvJVt7Yaj3qA6O+6QoxSQKwOTRWb85cd/NzEUksE+uqt3ZLXsgo8Z10u/Amh5ETUDXJ3mYTYDFiApV5lEeNWMQrqs8LD3KniafPc4cQlEiv9ajTaGLAlD/RCFM+AmAgVWITmBzqJrg94nvBoHncgGj+ARjQNkgyLtHzpE5UzuQfP2BywrxQUqwiyvHK8D9l3vmophB2ph5bsx7XVtGMSYD+OX+ouBJ7oIQP1OroHage4UU9yusj6Z4RrecTndXH1vh2ad8pvjQAOrA4uXsMbG7jp9wftGXAYMAI99CTVdADjZsgMwmM4WyklfcIP5G6jpRgKLCPdumG9HEze4gxeKvEVwc8OZYRs31LT/JaQZaesZOklJ+N/WTx7d5pN69GH5KnuUN38dOXu1+UPsr9fF1ko3aD49awWpwq9tQu7cR3qNdSBksDzhv5c5rXQEwKaF1BpYFgBZ52F6x8AxOHW1SdeuOTqt6edap/1Ejec9yVB0g3QjnxN6vapXk+1Qub182/pH2wLOWr4SqPNvTeKWidkGuN4Bkm11ozlK2aaP4Rut/VhNSy2Eu/vo8UYQu9YMdik/1+NOGVY8jgJn0JgWpxNx+nOxTJM8aNXr0i4eugyI0x99SIZt4GtT+Win3YHw8QNHmOY9b6FPvbllSso8LaNaMzxP/N0M70R+18ap5tgHs0eRoaX0fjypGMd+s7Fak8K6l4/JoAYTLB5+ZBTV49LiAgqoAO5beXL1bGOAOky9+M7qDjpuIfARqjydmYEjdywAAAABJRU5ErkJggg==</ElevationTexture.Bytes>
+        <ZonesTexture.Width>58</ZonesTexture.Width>
+        <ZonesTexture.Height>36</ZonesTexture.Height>
+        <ZonesTexture.Format>4</ZonesTexture.Format>
+        <ZonesTexture.Bytes Length="881">iVBORw0KGgoAAAANSUhEUgAAADoAAAAkCAYAAADYZynDAAADOElEQVRoBeVY587bMAz88jXde7//43X/6N71Ob7gQBxp2klaBBWQSBSP40TJa3Pj4v9o21PQfGScvpW5nzLG8EqQIT6c5t4Z3Zqp7bWFVt8C3pEKkFGM5BQDneqfi5KEZeoiI39fQWG8uRcmOuKdDihgXgU5ikoUOiUbsZB/m0k3B9jn4bd46y4h+VKS2cj4FMOKJOJdLg36fqnBhM8Sydy9yBTJfLaQNyd8u6KaKMneTYJiWqsJ2SUStytwsSlhbmfNJeKjjG2L1j6jmXNHNpLchVpPlvbon6kQxlmOrTOaGYcYe/GUJPdBzKDKE9t3iz+W19jPTnEbr/GB+2dn+84mMQBwNCqy4xnV86NgHWfB1hCkr2ORpL+q334J2ox0gJ2duPj2ogwPqab6Ocb4V+EExSyJlsrCsVN1joGzi3O42IFU/AFXxVjNZWk19Uggqb/VeDRniWYAPnF0E65Wu+ujg0Mc/FhxvrTMPhm5K+Oa6jABTTb66SzGE3WQjNUP37aygiUudtNMeslLeyTlAnQwr51hMceKlkRdNQufpUpXOQN2MFpRd6V1PkB283SKyhJrEl2iPPBq68YuCcW5Lw2q5/jBNIhEqx0xntHvg2EFYgDXH4uk8+3m8KEgEiSOC+m4XIJk1mavVINh95y64FncQ+dJmH7AsTyjBJ5zz0J2inYwz6vGg7smIClg2Ruz8R7Z3R0/BgfAosIpUa6EBtMAcXsoDmNHLmKczLiOLF7yNQdnjzm9iDLPlKhzQqOouz5MRF2Uow3vb66yxJI0ZfTw2yFLG1b00hm5ADR0/RwpZ8M5Eqac9Yd8PwbH8WIUya7ddppk9Km6OAbZ7JZBrH7pX7Ow49ZFUksSY3D0VVD6rDDqqxpnFVXf1WKltxecu04jmQrbWUjcj/FD4vqDXyUDGY2YnbT7T8kMantGaQyyFWEXjLaxd8lGjHvHpd2bCF4oV4uwdzVHeA8sBp2qFuajao7sqq0bg36NE/9AflzErEjCrFVRAN0W7pxP2Hbb3FeLqqJzRLYfpyxum2yoo0qfLvB4xaavV/pUQn3Wu+SwoNnucYtN3x84mPpbU/9p6jeVcbA9a/EPBsCSL862d8oAAAAASUVORK5CYII=</ZonesTexture.Bytes>
+        <POITexture.Width>58</POITexture.Width>
+        <POITexture.Height>36</POITexture.Height>
+        <POITexture.Format>4</POITexture.Format>
+        <POITexture.Bytes Length="893">iVBORw0KGgoAAAANSUhEUgAAADoAAAAkCAYAAADYZynDAAADRElEQVRoBc1Z2WoVQRDtRAVRXFAR1xg/QIUk//8F/oOCD4obPgZ8iOeMU5dz69b0MtMz2jD0UuvpqurumxyllK7wrdoewsSPdLSqjZLy4xJDLzrB8qttLbw1OrnN9dZrNM7guQkXLiXiUQY8Bs9X4Wk1s3pELTIEo+2BzAlS6ZrmBNirUdOsD07MkvP2sBk7Pbdk7PmW2Ns0dV9jPz80pF+UwnOju3rqnkvqEeTzcX4q69752yONKawp7fla57u0gWCX8UmQfi+DtSl7qN9qPxrSuQ84cxoRmHRSATwL+BDJQVb5In2s6QaA5k9foAY46g2A9REP154GmxDxtoBdrUatFrVGf44HkfVwPmyXwarVKg8oa633qoW2W5+L2JlE64WM4fxgPydLHqatfSZT2denbilVjsXxazI+lfFdjF/JfMrJKcAEOSVTWG8DSrA5wHRQD5rotCXPWYXDU2ALgKY2oh2oGsIj4Oq8wmnK1IC7Ibr+GVAD6COqKavOMU1Nhr3SONfIK5+OvYzRZqTwsoiaYd/rQVMDyMvfc5vk6TPm9UBrlV9UOnl/gm9qvdZ+xLf4Hn007FNKePZB/9/2HvclTtZhgrS25fROxlw82VH2B78gj0dDuuP4lQvlo9PieNNfL/QGV036OD4cit4JA2o1lR4awn4wXBxRrxG16Zf2IkmQSO09HntFWQRRn3t0TpaANGXU2vT5U5fypbrkNYQ0P7DzVtZ0nPOJ9u3L8TlaG0gnfOC40iNgSs+Nc/dptNE5XaTNSl0YSvyixr8i9Gi/M3Xc+pg3f7JRAVMXei4K/mfZCnfosPtdgPTaEK/Hv4yeSE3r2MsF8z4RCxTvbWAuor6WfYRLumvos2oUimc1X9uIyKDnu6vHz27ujU2dD57Pz/d2HsRN5rm0ezOmp0XaeJkVuczI+b5pRHWHvyBqFlEfoW9gBMjkI83T1jtMHaZH9fuxl/P07nN1imDZ/HVh65HxHC3it7VN3roEV3LQosqdJy/+MpE+jRthzi7pry8RrpUtgaQeA2g6NdVQs4npXKPH5H2/SUS90WhuKU0wUQYoPZKvWdvklIUjRTsAc8WPvHbyRv/eqNHlef6biMKxVdsf7OPptzw/0/YAAAAASUVORK5CYII=</POITexture.Bytes>
+        <VisibilityTexture.Width>58</VisibilityTexture.Width>
+        <VisibilityTexture.Height>36</VisibilityTexture.Height>
+        <VisibilityTexture.Format>4</VisibilityTexture.Format>
+        <VisibilityTexture.Bytes Length="170">iVBORw0KGgoAAAANSUhEUgAAADoAAAAkCAYAAADYZynDAAAAcUlEQVRoBe3SwQHAIAzDwMD+O7cTaAAR8fXH8XG+2fHujjNnOvQ16UQTlS7Q15XCYe1EcRppkKgUDmsnitNIg0SlcFg7UZxGGiQqhcPaieI00iBRKRzWThSnkQaJSuGwdqI4jTRIVAqHtRPFaaTBGtEfYLwBR9r5nbMAAAAASUVORK5CYII=</VisibilityTexture.Bytes>
+        <RoadTexture.Width>58</RoadTexture.Width>
+        <RoadTexture.Height>36</RoadTexture.Height>
+        <RoadTexture.Format>4</RoadTexture.Format>
+        <RoadTexture.Bytes Length="117">iVBORw0KGgoAAAANSUhEUgAAADoAAAAkCAYAAADYZynDAAAAPElEQVRoBe3QMQEAAADCoPVPbQwfiEBhwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGPgPDCDEAAFtsmCPAAAAAElFTkSuQmCC</RoadTexture.Bytes>
+        <RiverTexture.Width>58</RiverTexture.Width>
+        <RiverTexture.Height>36</RiverTexture.Height>
+        <RiverTexture.Format>4</RiverTexture.Format>
+        <RiverTexture.Bytes Length="738">iVBORw0KGgoAAAANSUhEUgAAADoAAAAkCAYAAADYZynDAAACqUlEQVRoBe1YDXOqMBC8JBBEfVaF//8L++HrtLXFQLpBbRRB1ATLTMmMowlhuc3uXYJMa0l/ofG/QNJwHIh2pfQszEvoGSu6ekQtLrtnjs6CDZGGiTTRayFqA+pqMOgKuIr7AJKvKqwO361/vxzVrJXUVCia8q21WydfOaFTovPIBv0/D+iBq8bwJlLRG+a8wdJT1jyvEaDlQqdESWua74pPGQdys65NQuRuYRVnVNA/jjGPrfNiND8oQKYIrbSgmGla11h5Auu+Q9UumlfURaDoRR1DruoKkBXvmFOD4seTbut5V3QBVajg9GK2kTMtFlA1P2U8QX6+6+PFOgNz8aXz0VwAs0QOLgNbdIw920iWsGxDcXgqYS62IUUso4hvr0cmhx2bN0WXRkmTd4jtGXl4ro1xKvrYKR5LKJttlR1JnJZQwKjAZ4elzXbDGH3VpcC5h1SuefPI84VFZAyVfkiOQKg8CgoaRQV9ZtZgkpsjoqYslxSaRXRsFvlGoGS3VyaioASrn7ADG1cwU1TbD2wjaZBRCtuuP6Ek34VQTVf0MzgjhIVLlStY13adrZtgozfF50m1r1nKETRs+JiHlErzO6THL0ajGGqu7f0yKCi7AO8ass5EzcOSUNHTxlsWkAxBdGOJX0Ooaa4Xok3gt4xLFKTsIFdvwai7x58Mdei3jMHahy1A7pc5irqlWqr54X3V3z0kCka0JRsgV1Xux8J+UKrL59LHyUiONQVmT0WVFiIn4eHVrX+KCoSkoWRmDx3Cw2tbL4jKuc1D41qFnYfjaKmxbRnSeyu7GOXXicoFquzqNIM43oTMqUnnVlkXor3bXvZkuLB/pBUO1XaP11ui+wB9fZ96xhdyz3AGoj0TxDmcQVHnJewZwKBozwRxDmdQ1HkJewbwDc5W1aJtUl1fAAAAAElFTkSuQmCC</RiverTexture.Bytes>
+        <NaturalWonderTexture.Width>58</NaturalWonderTexture.Width>
+        <NaturalWonderTexture.Height>36</NaturalWonderTexture.Height>
+        <NaturalWonderTexture.Format>4</NaturalWonderTexture.Format>
+        <NaturalWonderTexture.Bytes Length="205">iVBORw0KGgoAAAANSUhEUgAAADoAAAAkCAYAAADYZynDAAAAlElEQVRoBe2WwQ2AMAwDk0qw/8TQSIwQP5xyiC+WfVep5BtR7/nPOn/it5Chp5nGKEaHEhhzdFf2CI8Yuu4a2bztRwyNp4ZePaPJn1EPoN3XM46uABtDBRCtIjBqpUNQBqMCiFYRGLXSISiDUQFEqwiMWukQlMGoAKJVBEatdAjKYFQA0SoCo1Y6BGUwKoBoFfEboxsRZwZQ7dORhAAAAABJRU5ErkJggg==</NaturalWonderTexture.Bytes>
+        <MatchingSeedTexture.Width>58</MatchingSeedTexture.Width>
+        <MatchingSeedTexture.Height>36</MatchingSeedTexture.Height>
+        <MatchingSeedTexture.Format>4</MatchingSeedTexture.Format>
+        <MatchingSeedTexture.Bytes Length="117">iVBORw0KGgoAAAANSUhEUgAAADoAAAAkCAYAAADYZynDAAAAPElEQVRoBe3QMQEAAADCoPVPbQwfiEBhwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGPgPDCDEAAFtsmCPAAAAAElFTkSuQmCC</MatchingSeedTexture.Bytes>
+        <LandmarksTexture.Width>58</LandmarksTexture.Width>
+        <LandmarksTexture.Height>36</LandmarksTexture.Height>
+        <LandmarksTexture.Format>4</LandmarksTexture.Format>
+        <LandmarksTexture.Bytes Length="176">iVBORw0KGgoAAAANSUhEUgAAADoAAAAkCAYAAADYZynDAAAAd0lEQVRoBe3SsQ3AMBDDQCf77+wYSM0B+GaQTo1e52evdf753zv/xP/CDp0mnWii0gV6ulI4rJ0oTiMNEpXCYe1EcRppkKgUDmsnitNIg0SlcFg7UZxGGiQqhcPaieI00iBRKRzWThSnkQaJSuGwdqI4jTS4RvQDAesCRtjfQ3MAAAAASUVORK5CYII=</LandmarksTexture.Bytes>
+        <LandmarkDatabase>
+            <Landmarks Null="true" />
+        </LandmarkDatabase>
+        <TerritoryDatabase>
+            <Territories Length="27">
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>8</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+            </Territories>
+        </TerritoryDatabase>
+        <EntitiesProvider>
+            <SpawnPoints Length="3">
+                <Item>
+                    <SpawnPoints>
+                        <Column>39</Column>
+                        <Row>18</Row>
+                    </SpawnPoints>
+                    <Flags>2</Flags>
+                </Item>
+                <Item>
+                    <SpawnPoints>
+                        <Column>40</Column>
+                        <Row>18</Row>
+                    </SpawnPoints>
+                    <Flags>1</Flags>
+                </Item>
+                <Item>
+                    <SpawnPoints>
+                        <Column>22</Column>
+                        <Row>19</Row>
+                    </SpawnPoints>
+                    <Flags>2</Flags>
+                </Item>
+            </SpawnPoints>
+        </EntitiesProvider>
+        <Author Null="true" />
+        <Description Null="true" />
+        <CreationDate>0</CreationDate>
+        <LastEditionDate>0</LastEditionDate>
+        <FailureFlags>0</FailureFlags>
+        <MapName Null="true" />
+    </TerrainSave>
+</Document>

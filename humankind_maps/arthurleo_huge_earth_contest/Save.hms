@@ -1,0 +1,712 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?amplitude-serialization-serializer version="4"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Brain, Amplitude.AI" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Hsm.StateMachineContext`2, Amplitude.AI" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Hsm.StateMachineContext`2+TransitionContext, Amplitude.AI" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Framework.Simulation.BaseSimulationEntity, Amplitude.Framework" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Framework.Simulation.Collections.DescriptorCollection, Amplitude.Framework" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.AnalysisData.MajorEmpire.MajorEmpireData, Amplitude.Mercury.AI.Brain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.DoCulturalAction, Amplitude.Mercury.AI.Brain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Data.Simulation.SimulationEventEffect_AddNarratorSentence, Amplitude.Mercury.Data" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveDescriptor, Amplitude.Mercury.Firstpass" number="5"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveSessionSlotDescriptor, Amplitude.Mercury.Firstpass" number="5"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveSlotsDescriptor, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ArmyStealTerritoryActionInfo, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.AvailableGrievanceCollection, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentAftermathInfo, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentSufferedNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.DistrictInfo, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EditorOrderCreateArmyAt, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EditorOrderForceWar, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireAchievementStatistics, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireStatistics, Amplitude.Mercury.Firstpass" number="3"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireWarPeriod, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.LootInfo, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.NaturalWonderDiscoveredNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.OnGoingDemandCollection, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.PopulationStolenNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligionChangedNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligiousConversionEndedNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligiousConversionStartedNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SiegeInfo, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SurrenderProposition, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SurrenderTerritoryInfo, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TenetChosenNotificationData, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeNotificationData, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadDestroyedDestinationNotificationData, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadDestroyedOriginNotificationData, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadFreezedDestinationNotificationData, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadFreezedOriginNotificationData, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Sandbox.Sandbox, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.AirStrike, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArtilleryStrike, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Battle, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleRepository, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CultureManager, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfCommunication, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfDefense, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfDevelopment, Amplitude.Mercury.Firstpass" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfForeignAffairs, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfResources, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfTheInterior, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DiplomaticMoral, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.EndGameController, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MajorEmpire, Amplitude.Mercury.Firstpass" number="8"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MinorEmpire, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NarratorAncillary, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Participant_Army, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Region+SurroundingTerritoryCollection, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Settlement, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SettlementStatusOnEventCollection, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Siege, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SimulationEventEffect_AddEmpireBattleAbility, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TradeController, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.World, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.StateShare.StateShareHeader, Amplitude.Mercury.Firstpass" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.Landmark, Amplitude.Mercury.Terrain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.LandmarkDatabase, Amplitude.Mercury.Terrain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.SpawnPoint, Amplitude.Mercury.Terrain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerrainSave, Amplitude.Mercury.Terrain" number="3"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerrainSaveDescriptor, Amplitude.Mercury.Terrain" number="4"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.Territory, Amplitude.Mercury.Terrain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerritoryDatabase, Amplitude.Mercury.Terrain" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.WorldMapEntitiesProvider, Amplitude.Mercury.Terrain" number="1"?>
+<Document>
+    <TerrainSave>
+        <FormatRevision>10</FormatRevision>
+        <Width>150</Width>
+        <Height>88</Height>
+        <UseMapCycling>true</UseMapCycling>
+        <UseProceduralMountainChains>false</UseProceduralMountainChains>
+        <BiomeNames Length="10">
+            <String>Arctic</String>
+            <String>Badlands</String>
+            <String>Desert</String>
+            <String>Grassland</String>
+            <String>Mediterranean</String>
+            <String>Savanna</String>
+            <String>Taiga</String>
+            <String>Temperate</String>
+            <String>Tropical</String>
+            <String>Tundra</String>
+        </BiomeNames>
+        <TerrainTypeNames Length="15">
+            <String>CityTerrain</String>
+            <String>CoastalWater</String>
+            <String>DryGrass</String>
+            <String>Forest</String>
+            <String>Lake</String>
+            <String>Mountain</String>
+            <String>MountainSnow</String>
+            <String>Ocean</String>
+            <String>Prairie</String>
+            <String>RockyField</String>
+            <String>RockyForest</String>
+            <String>Sterile</String>
+            <String>StoneField</String>
+            <String>Wasteland</String>
+            <String>WoodLand</String>
+        </TerrainTypeNames>
+        <POINames Length="54">
+            <String>None</String>
+            <String>POI_NaturalModifier01</String>
+            <String>POI_NaturalModifier02</String>
+            <String>POI_NaturalModifier03</String>
+            <String>POI_NaturalModifier04</String>
+            <String>POI_NaturalModifier05</String>
+            <String>POI_NaturalModifier06</String>
+            <String>POI_NaturalModifier07</String>
+            <String>POI_NaturalModifier08</String>
+            <String>POI_NaturalModifier09</String>
+            <String>POI_NaturalModifier10</String>
+            <String>POI_NaturalModifier11</String>
+            <String>POI_NaturalModifier12</String>
+            <String>POI_NaturalModifier13</String>
+            <String>POI_NaturalModifier14</String>
+            <String>POI_NaturalModifier15</String>
+            <String>POI_NaturalModifier16</String>
+            <String>POI_NaturalModifier17</String>
+            <String>POI_NaturalModifier18</String>
+            <String>POI_NaturalModifier19</String>
+            <String>POI_NaturalModifier20</String>
+            <String>POI_NaturalModifier21</String>
+            <String>POI_NaturalModifier22</String>
+            <String>POI_NaturalModifier23</String>
+            <String>POI_NaturalModifier24</String>
+            <String>POI_ResourceDeposit01</String>
+            <String>POI_ResourceDeposit02</String>
+            <String>POI_ResourceDeposit03</String>
+            <String>POI_ResourceDeposit04</String>
+            <String>POI_ResourceDeposit05</String>
+            <String>POI_ResourceDeposit06</String>
+            <String>POI_ResourceDeposit07</String>
+            <String>POI_ResourceDeposit08</String>
+            <String>POI_ResourceDeposit11</String>
+            <String>POI_ResourceDeposit12</String>
+            <String>POI_ResourceDeposit13</String>
+            <String>POI_ResourceDeposit14</String>
+            <String>POI_ResourceDeposit15</String>
+            <String>POI_ResourceDeposit16</String>
+            <String>POI_ResourceDeposit17</String>
+            <String>POI_ResourceDeposit18</String>
+            <String>POI_ResourceDeposit19</String>
+            <String>POI_ResourceDeposit20</String>
+            <String>POI_ResourceDeposit21</String>
+            <String>POI_ResourceDeposit22</String>
+            <String>POI_ResourceDeposit23</String>
+            <String>POI_ResourceDeposit24</String>
+            <String>POI_ResourceDeposit25</String>
+            <String>POI_ResourceDeposit26</String>
+            <String>POI_ResourceDeposit27</String>
+            <String>POI_ResourceDeposit28</String>
+            <String>POI_ResourceDeposit29</String>
+            <String>POI_ResourceDeposit30</String>
+            <String>POI_ResourceDeposit31</String>
+        </POINames>
+        <NaturalWonderNames Length="14">
+            <String>DanakilDesert</String>
+            <String>GreatBarrierReef</String>
+            <String>GreatBlueHole</String>
+            <String>HalongBay</String>
+            <String>KawahIjen</String>
+            <String>LakeBaikal</String>
+            <String>LakeHillier</String>
+            <String>MountEverest</String>
+            <String>MountMulu</String>
+            <String>MountRoraima</String>
+            <String>MountVesuvius</String>
+            <String>PeritoMorenoGlacier</String>
+            <String>Vinicunca</String>
+            <String>Yellowstone</String>
+        </NaturalWonderNames>
+        <LandmarksDefinitionNames Length="5">
+            <String>Landmark_Desert</String>
+            <String>Landmark_Forest</String>
+            <String>Landmark_Lake</String>
+            <String>Landmark_Mountain</String>
+            <String>Landmark_River</String>
+        </LandmarksDefinitionNames>
+        <ElevationTexture.Width>150</ElevationTexture.Width>
+        <ElevationTexture.Height>88</ElevationTexture.Height>
+        <ElevationTexture.Format>4</ElevationTexture.Format>
+        <ElevationTexture.Bytes Length="7162">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</ElevationTexture.Bytes>
+        <ZonesTexture.Width>150</ZonesTexture.Width>
+        <ZonesTexture.Height>88</ZonesTexture.Height>
+        <ZonesTexture.Format>4</ZonesTexture.Format>
+        <ZonesTexture.Bytes Length="3128">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</ZonesTexture.Bytes>
+        <POITexture.Width>150</POITexture.Width>
+        <POITexture.Height>88</POITexture.Height>
+        <POITexture.Format>4</POITexture.Format>
+        <POITexture.Bytes Length="1150">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAAERUlEQVR4Ae2cTY4TMRBGe9AsEGLDiBsgFmy5/xk4CYLNCLGDGMVDyeOuVDkuu39epFHc7c9l+/lLxd09ysOyLH8uf7wg0JXAm67RCAaBKwGMhRVCCGCsEKwExVh4IIQAxgrBSlCMhQdCCGCsEKwExVh4IIQAxgrBSlCMtREPPB3sAQjGmmSsbKT8/mN5GDaS3KenQ2+bNBueFXoIN2jTomjGuVXf0OVLk8jYL51UCmSsCpRep6yfcs10944lMrY2Noyl0bnWfW1M6rMW1TAlVWL9QGhBMJZG51r3Tex/3gmTvRdlLYw0mLZoWp0Wv1anxdLqUiw53lpsyzmMZaEkNL+EyZ5FOS9W+S6aLqlOW7RUl9undrIs41jKuZ9ajFxnidOqYfPeSq5od8s0hbzbYdmvPJblbh0aA2EsIyhNNnoBW/trbafNfa0OY62RMZwfuVCG4ZglI8aNsczLsS3hCHPcM2M27/fQm9A2GSq9emzAc6yIaZCxIqgGxNx6hiqnTMYqiawc9/x0t8TqkaFWphZyGmMZsfZaWE/mkQaUZW3IVp0Wo0cdxupB8Rrji7gT/1mUZRceg0qtLMt4ZVnqZpqMPVa5Mjs+TkaSxpo5FTLWTPod+5amSmWZrWS5Y5dqKDKWimebldJEaYTyWJZnjv5VxpL7hJkDm9n3HhjILCS//mQ5MZS6kUzJWCNpB/YlM1VZTt2Whgscyr/QGCua8MT40mCjh4GxRhM/SX+v9lgnmTfTDCaAsYIBnzU8xpq08p9W7sxPGk73btljdUdKwESAjDXYB7PuKw2eJsYaCXzm5f/Ieaa+yFg3iLdmmLJd2lOlm5RH31tlnOyxMok73s+UiayYyFhWUopu7XFJmbWUEIerwliBS5oNd0aD8VUYaKwzhyZjnXn1A+eOsQLhnjk0xjrz6gfOHWMFwj1zaIwVsPr5KjC/B3Sx+ZBcFW5+ifY5QDLWPtet66jLn7x82+FfejBW1yX6H+zxsjjpb8uvj9fxyZ+8TOP9fXmmmetax89XYSs52qkEyFgqnuNVWjKRvOiw6GuUMFaNyoHPfRe/9GyZ5rNFVNFgrAqUI57yZB758Dztt1pe7LFaqNHmJgEy1k1EfoHco/hbb6PFvXPAWAHrmL9KAkLvJiTG2s1S9R+otu9KH46ctTTd2qgw1hqZg52vmcN6hWjVSWRs3iUNysuHy934n41XghIfGUvSOHk5ZTVpqlqWsyIiY1lJoXMRIGO5cCG2EsBYVlLoXAQwlgsXYisBjGUlhc5FAGO5cCG2EsBYVlLoXAQwlgsXYisBjGUlhc5FAGO5cCG2EsBYVlLoXAQwlgsXYisBjGUlhc5FAGO5cCG2EsBYVlLoXAQwlgsXYisBjGUlhc5FAGO5cCG2EsBYVlLoXAQwlgsXYisBjGUlhc5FAGO5cCG2EsBYVlLoXAQwlgsXYisBjGUlhc5F4C/DE7QlK2JIqwAAAABJRU5ErkJggg==</POITexture.Bytes>
+        <VisibilityTexture.Width>150</VisibilityTexture.Width>
+        <VisibilityTexture.Height>88</VisibilityTexture.Height>
+        <VisibilityTexture.Format>4</VisibilityTexture.Format>
+        <VisibilityTexture.Bytes Length="467">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAABmklEQVR4Ae3SsREAIAwDscD+O8MS+U4ewMWfzhtTYL/A3b/0qMAMWBQkBcBKsjoFi4GkAFhJVqdgMZAUACvJ6hQsBpICYCVZnYLFQFIArCSrU7AYSAqAlWR1ChYDSQGwkqxOwWIgKQBWktUpWAwkBcBKsjoFi4GkAFhJVqdgMZAUACvJ6hQsBpICYCVZnYLFQFIArCSrU7AYSAqAlWR1ChYDSQGwkqxOwWIgKQBWktUpWAwkBcBKsjoFi4GkAFhJVqdgMZAUACvJ6hQsBpICYCVZnYLFQFIArCSrU7AYSAqAlWR1ChYDSQGwkqxOwWIgKQBWktUpWAwkBcBKsjoFi4GkAFhJVqdgMZAUACvJ6hQsBpICYCVZnYLFQFIArCSrU7AYSAqAlWR1ChYDSQGwkqxOwWIgKQBWktUpWAwkBcBKsjoFi4GkAFhJVqdgMZAUACvJ6hQsBpICYCVZnYLFQFIArCSrU7AYSAqAlWR1ChYDSQGwkqxOwWIgKQBWktUpWAwkBcBKsjoFi4GkAFhJVqdgMZAUACvJ6vQDq3wBr0geyrwAAAAASUVORK5CYII=</VisibilityTexture.Bytes>
+        <RoadTexture.Width>150</RoadTexture.Width>
+        <RoadTexture.Height>88</RoadTexture.Height>
+        <RoadTexture.Format>4</RoadTexture.Format>
+        <RoadTexture.Bytes Length="310">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAAA/UlEQVR4Ae3QgQAAAADDoPlTH+SFUGHAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgIHvgQHOmAAB23HGpQAAAABJRU5ErkJggg==</RoadTexture.Bytes>
+        <RiverTexture.Width>150</RiverTexture.Width>
+        <RiverTexture.Height>88</RiverTexture.Height>
+        <RiverTexture.Format>4</RiverTexture.Format>
+        <RiverTexture.Bytes Length="2902">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</RiverTexture.Bytes>
+        <NaturalWonderTexture.Width>150</NaturalWonderTexture.Width>
+        <NaturalWonderTexture.Height>88</NaturalWonderTexture.Height>
+        <NaturalWonderTexture.Format>4</NaturalWonderTexture.Format>
+        <NaturalWonderTexture.Bytes Length="887">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAADPklEQVR4Ae2c0U7jMBRE00JLKZT//06QdhGwsDeClxYUFMcTe+xTwUMTMr6eObptHZfNxzDEDw8cyOvANq8cajjw6QBgQYLEAcCS2IooYMGAxAHAktiKKGDBgMQBwJLYiihgwYDEAcCS2IooYMGAxAHAktiKKGDBgMQBwJLYiihgwYDEAcCS2IooYMGAxAHAkthaj+h+U6aW6zLDMmpWB65C7d+54n48Fr8vL+fH13q2KbE1+WHskzHwI5ui18p59XHKvBRGnwSq1bNedcAiHWvVGTJYEQfKdKwiU9UNerfXabsqA1aO5N6H4W6XQ6gdDV4K28myqpnQsaqKo51iAKudLKuaCWBVFUc7xQBWO1lWNRPAqiqO+cUcYqnjMP8y+RWAJbdYN8BhvNMbt8WedUMkK7PckGwdF045QMeacodzyQ5UD9ZV9RUmey+98Dree5XcE1V/bCXdkUavFX+LfVhv2iEm1XmPNWlP3pObr813H4U23+WdzbRa/R1run6vs+M24U42N9KxvNC0qZaOZROVV6GA5ZWXTbWAZROVV6GA5ZVXUrW3c1Ke87cT1WSSmRhhxVPH+Dh/ZP/5d8fnrAXGNuscj6bA+jN+aTOMObL//IyNv7FudruyJyw3nEXAk1wONNWxcpmCznIHAGu5hyj84ABg/WBKa4d2BT7QAFZrFF3MZ/e1y/TisPyp9Zv3U9zUferkpq6chMwD2HasU7R3oMpMw4XcdsE/bbMF6ynWZk4rr81c+N7+0/A3FRDrl8L2ky03w+343iw61vtrWg2AleYbV/3iQGqn+0WW0707AFi9EyCaP2CJjO1dFrB6J0A0f8ASGdu7LGB1SMBNLC7fiOfNcoPY4F7l6Vi9Ji+eN2CJDe5VHrB6TV48b8ASG9yrPGD1mrx43nZg3cdH5XuxKcgvd8AOrPF7gwP7sJYnL1ZgHUtscK/yfh2r16TM5g1YZoG5lAtYLkmZ1QlYZoG5lAtYLkmZ1QlYZoG5lAtYLkmZ1QlYZoG5lAtYLkmZ1QlYZoG5lAtYLkmZ1QlYZoG5lAtYLkmZ1QlYZoG5lAtYLkmZ1QlYZoG5lAtYLkmZ1QlYZoG5lAtYLkmZ1fkfbgc8SplrapQAAAAASUVORK5CYII=</NaturalWonderTexture.Bytes>
+        <MatchingSeedTexture.Width>150</MatchingSeedTexture.Width>
+        <MatchingSeedTexture.Height>88</MatchingSeedTexture.Height>
+        <MatchingSeedTexture.Format>4</MatchingSeedTexture.Format>
+        <MatchingSeedTexture.Bytes Length="310">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAAA/UlEQVR4Ae3QgQAAAADDoPlTH+SFUGHAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgIHvgQHOmAAB23HGpQAAAABJRU5ErkJggg==</MatchingSeedTexture.Bytes>
+        <LandmarksTexture.Width>150</LandmarksTexture.Width>
+        <LandmarksTexture.Height>88</LandmarksTexture.Height>
+        <LandmarksTexture.Format>4</LandmarksTexture.Format>
+        <LandmarksTexture.Bytes Length="471">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAABnklEQVR4Ae3SsQ0AIAwEMWD/nQGJFbjOUeovTp57jPtOgb8F1t85awq8AmCRkBQAK8lqFCwGkgJgJVmNgsVAUgCsJKtRsBhICoCVZDUKFgNJAbCSrEbBYiApAFaS1ShYDCQFwEqyGgWLgaQAWElWo2AxkBQAK8lqFCwGkgJgJVmNgsVAUgCsJKtRsBhICoCVZDUKFgNJAbCSrEbBYiApAFaS1ShYDCQFwEqyGgWLgaQAWElWo2AxkBQAK8lqFCwGkgJgJVmNgsVAUgCsJKtRsBhICoCVZDUKFgNJAbCSrEbBYiApAFaS1ShYDCQFwEqyGgWLgaQAWElWo2AxkBQAK8lqFCwGkgJgJVmNgsVAUgCsJKtRsBhICoCVZDUKFgNJAbCSrEbBYiApAFaS1ShYDCQFwEqyGgWLgaQAWElWo2AxkBQAK8lqFCwGkgJgJVmNgsVAUgCsJKtRsBhICoCVZDUKFgNJAbCSrEbBYiApAFaS1ShYDCQFwEqyGgWLgaQAWElWo2AxkBQAK8lqFCwGkgJgJVmNgsVAUgCsJKvRA3z6Aq7JRb2EAAAAAElFTkSuQmCC</LandmarksTexture.Bytes>
+        <LandmarkDatabase>
+            <Landmarks Null="true" />
+        </LandmarkDatabase>
+        <TerritoryDatabase>
+            <Territories Length="91">
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>5</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>8</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>7</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>7</ContinentIndex>
+                    <Biome>5</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>7</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>7</ContinentIndex>
+                    <Biome>5</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>6</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>9</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>9</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>8</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>5</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>5</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>2</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>5</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>8</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>8</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>5</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>5</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>8</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+            </Territories>
+        </TerritoryDatabase>
+        <EntitiesProvider>
+            <SpawnPoints Length="2">
+                <Item>
+                    <SpawnPoints>
+                        <Column>89</Column>
+                        <Row>58</Row>
+                    </SpawnPoints>
+                    <Flags>3</Flags>
+                </Item>
+                <Item>
+                    <SpawnPoints>
+                        <Column>120</Column>
+                        <Row>61</Row>
+                    </SpawnPoints>
+                    <Flags>2</Flags>
+                </Item>
+            </SpawnPoints>
+        </EntitiesProvider>
+        <Author>arbartur&amp;Commisar_Leo</Author>
+        <Description Null="true" />
+        <CreationDate>0</CreationDate>
+        <LastEditionDate>0</LastEditionDate>
+        <FailureFlags>0</FailureFlags>
+        <MapName Null="true" />
+    </TerrainSave>
+</Document>
