@@ -328,23 +328,19 @@ class TestPhase3Task3VisualizationRaionHexMap:
         """Create hex map visualization with raions colored to avoid adjacent matches."""
         from geo_hex_mapper import GeoHexMapper
         from shapely.geometry import Point
+        from config_loader import get_config
+
+        # Load configuration
+        config = get_config()
 
         # Load raion data
         gdf = gpd.read_file(UKRAINE_RAIONS_PATH)
 
-        # Map bounds from Phase 2
-        MAP_BOUNDS = {
-            "min_lon": 19.0,
-            "max_lon": 43.5,
-            "min_lat": 42.5,
-            "max_lat": 54.0,
-        }
-
-        # Create hex mapper
+        # Create hex mapper from config
         mapper = GeoHexMapper(
-            width=150,
-            height=88,
-            **MAP_BOUNDS
+            width=config.grid_width,
+            height=config.grid_height,
+            **config.map_bounds
         )
 
         # Create a grid to store which raion each hex belongs to
@@ -439,9 +435,9 @@ class TestPhase3Task3VisualizationRaionHexMap:
         # Draw raion boundaries for reference
         gdf.boundary.plot(ax=ax, color='darkgray', linewidth=0.5, alpha=0.5)
 
-        # Set bounds
-        ax.set_xlim(MAP_BOUNDS["min_lon"], MAP_BOUNDS["max_lon"])
-        ax.set_ylim(MAP_BOUNDS["min_lat"], MAP_BOUNDS["max_lat"])
+        # Set bounds from config
+        ax.set_xlim(config.map_bounds["min_lon"], config.map_bounds["max_lon"])
+        ax.set_ylim(config.map_bounds["min_lat"], config.map_bounds["max_lat"])
 
         ax.set_xlabel("Longitude")
         ax.set_ylabel("Latitude")
@@ -482,23 +478,19 @@ class TestPhase3Task3VisualizationRaionHexMap:
         from geo_hex_mapper import GeoHexMapper
         from shapely.geometry import Point
         from hex_grid import HexGrid
+        from config_loader import get_config
+
+        # Load configuration
+        config = get_config()
 
         # Load raion data
         gdf = gpd.read_file(UKRAINE_RAIONS_PATH)
 
-        # Map bounds from Phase 2
-        MAP_BOUNDS = {
-            "min_lon": 19.0,
-            "max_lon": 43.5,
-            "min_lat": 42.5,
-            "max_lat": 54.0,
-        }
-
-        # Create hex mapper
+        # Create hex mapper from config
         mapper = GeoHexMapper(
-            width=150,
-            height=88,
-            **MAP_BOUNDS
+            width=config.grid_width,
+            height=config.grid_height,
+            **config.map_bounds
         )
 
         print(f"\nMapping hex grid to {len(gdf)} raions...")
@@ -657,6 +649,10 @@ class TestPhase3Task3VisualizationRaionHexMap:
         from geo_hex_mapper import GeoHexMapper
         from shapely.geometry import Point
         from hex_grid import HexGrid
+        from config_loader import get_config
+
+        # Load configuration
+        config = get_config()
 
         # Load raion data
         gdf = gpd.read_file(UKRAINE_RAIONS_PATH)
@@ -701,19 +697,11 @@ class TestPhase3Task3VisualizationRaionHexMap:
             "Chernihiv": {"lat": 51.4982, "lon": 31.2893},
         }
 
-        # Map bounds from Phase 2
-        MAP_BOUNDS = {
-            "min_lon": 19.0,
-            "max_lon": 43.5,
-            "min_lat": 42.5,
-            "max_lat": 54.0,
-        }
-
-        # Create hex mapper
+        # Create hex mapper from config
         mapper = GeoHexMapper(
-            width=150,
-            height=88,
-            **MAP_BOUNDS
+            width=config.grid_width,
+            height=config.grid_height,
+            **config.map_bounds
         )
 
         print(f"Mapping hex grid to oblasts...")

@@ -209,10 +209,10 @@ class TestGeoHexMapper:
 
         hex_size_km = mapper.hex_size_km
 
-        # Target is ~6.7 km per hex side
-        # With 150x88 grid over Ukraine (1300x900 km), hex size will be ~5.2 km
-        # Allow range 5-7 km to account for projection distortion
-        assert 5.0 <= hex_size_km <= 7.0, \
+        # With 150x88 grid over expanded bounds (to include margins),
+        # hex size will be ~4.6 km (smaller than original ~5.2 km)
+        # Allow range 4.5-7 km to account for different bound configurations
+        assert 4.5 <= hex_size_km <= 7.0, \
             f"Hex size {hex_size_km:.2f} km is outside target range"
 
     def test_corner_coordinates(self):

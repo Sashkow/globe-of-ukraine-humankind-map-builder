@@ -27,14 +27,15 @@ margins:
 # Geographic Bounds
 # These are lat/lon boundaries for the map
 bounds:
-  # New bounds - Ukraine's actual geographic extent
-  # This naturally provides margins because Ukraine's shape isn't rectangular
+  # New bounds - Grid centered on Ukraine with equal east/west margins
+  # Height constraint (888km) requires larger hex size (5.83km)
+  # This creates 208km margins on east/west, 0km margins on north/south
   new:
-    min_lon: 22.0   # Western edge (Ukraine's western border)
-    max_lon: 40.5   # Eastern edge (Ukraine's eastern border)
-    min_lat: 44.0   # Southern edge (Crimea southern coast)
-    max_lat: 52.5   # Northern edge (Ukraine's northern border)
-    description: "Tight bounds matching Ukraine's extent - natural margins from irregular shape"
+    min_lon: 20   # Western edge (~208km margin in UTM)
+    max_lon: 44   # Eastern edge (~208km margin in UTM)
+    min_lat: 43   # Southern edge (buffer for Crimea at 44.39°N)
+    max_lat: 53   # Northern edge (buffer for north at 52.38°N)
+    description: "Grid centered on Ukraine, with buffer for full coverage"
 
   # Original bounds - generous buffer
   original:

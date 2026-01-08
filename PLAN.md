@@ -161,285 +161,607 @@ Create a playable, geographically accurate map of Ukraine in Humankind game form
 
 ---
 
-## Phase 4: Hex Grid Generation (TDD Approach)
+## Phase 4: Territory Assignment & Biome Mapping ✓ READY TO IMPLEMENT
 
-### Task 4.1: Create hex grid for Ukraine bounding box
-**Goal:** Generate hex grid covering Ukraine geography at maximum detail
+**Status:** Configuration optimized, hex grid validated, raion data loaded. Ready for territory assignment implementation.
 
-**Test:** `test_create_ukraine_hex_grid()` - verify grid coverage and hex count
+### Task 4.1: Create territory assignment system
+**Goal:** Build the core system that assigns hexes to raion territories
 
-**Steps:**
-1. Write test: grid should be 150×88 hexes (maximum map size)
-2. Calculate hex size: ~6.7 km side length to fit Ukraine (1,300×900 km)
-3. Position grid to cover Ukraine bbox (22°E-40.5°E, 44°N-52.5°N) centered
-4. Generate all 13,200 hexes with proper pointy-top coordinates
-5. Test: verify dimensions exactly 150×88
+**Implementation approach:**
+1. Create `TerritoryAssigner` class in `territory_assigner.py`
+2. Use existing `GeoHexMapper` for coordinate conversion
+3. Use loaded raion GeoDataFrame for polygon containment
+4. Implement efficient point-in-polygon algorithm
 
-**Expected result:** 150×88 grid with ~9,750 hexes covering Ukraine landmass, ~3,450 for ocean/buffer
+**Key components:**
+- **Input:** Hex grid (150×88), raion geometries (139 raions)
+- **Output:** Dictionary mapping (col, row) → raion_index
+- **Algorithm:** For each hex, test centroid against all raion polygons
+- **Ocean handling:** Hexes not in any raion → ocean territory (index 0)
 
-### Task 4.2: Assign hexes to raions (core algorithm)
-**Goal:** Map each hex to the correct raion (district)
+**Expected results (from config):**
+- Total hexes: 13,200
+- Ukraine hexes: ~8,102 (61.4% coverage)
+- Ocean/buffer hexes: ~5,098 (38.6%)
+- Hex size: ~5.20 km
 
-**Test:** `test_hex_to_raion_assignment()` - verify sample hexes are assigned correctly
+### Task 4.2: Implement biome assignment
+**Goal:** Map each raion to appropriate climate biome
 
-**Sample test cases:**
-- Hex at Kyiv center → specific Kyiv raion
-- Hex at Lviv center → specific Lviv raion
-- Hex in Black Sea → Ocean territory
-- Hex on border between raions → assign to one with larger overlap
-- Verify no raion gets 0 hexes
+**Biome mapping strategy:**
+- Group raions by oblast
+- Assign biome based on geographic location of oblast
+- Use Humankind's 10 biome types
 
-**Algorithm (based on research from 2.1):**
-1. Write test with known hex positions
-2. For each hex, compute centroid point
-3. Check which raion polygon contains centroid (136 raions to check)
-4. If no raion contains it, check for intersection and use largest overlap
-5. Assign to ocean if no overlap with any raion
-6. Track assignment counts for validation
+**Oblast → Biome mapping:**
+```
+Western Ukraine (Lviv, Volyn, Rivne, etc.):
+  → Temperate (7) - forested regions
 
-**Validation criterion:** At least 74% of hexes should be assigned to non-ocean territories (~9,750 / 13,200)
+Central Ukraine (Kyiv, Cherkasy, Poltava, Vinnytsia):
+  → Grassland (3) - fertile black earth steppes
 
-### Task 4.3: Validate raion sizes
-**Goal:** Ensure each raion has reasonable hex count for gameplay
+Eastern Ukraine (Kharkiv, Donetsk, Luhansk, Dnipro):
+  → Grassland (3) - steppe regions
 
-**Test:** `test_raion_hex_counts()` - verify each raion has 30-150 hexes
+Southern Ukraine (Odesa, Mykolaiv, Kherson, Zaporizhzhia):
+  → Mediterranean (4) - coastal regions
 
-**Steps:**
-1. Write test with min/max thresholds per raion
-2. Count hexes assigned to each of 136 raions
-3. Identify outliers (too small or too large)
-4. Assert: no raion has < 20 hexes (minimum playable size)
-5. Assert: average is ~72 hexes per raion
-6. Print statistics table grouped by oblast
+Crimea:
+  → Mediterranean (4) - warm coastal climate
 
-**Expected distribution:**
-- Small raions: 30-50 hexes
-- Medium raions: 50-90 hexes
-- Large raions: 90-150 hexes
-- Average: ~72 hexes
+Carpathian oblasts (Ivano-Frankivsk, Zakarpattia):
+  → Temperate (7) with mountain terrain
+```
 
-**Adjustment strategy:** If hex counts are wrong, adjust overall grid density
+### Task 4.3: Generate zone texture and territory database
+**Goal:** Create the PNG zone texture and territory XML structure
 
----
+**Zone texture generation:**
+1. Create numpy array: shape=(88, 150), dtype=uint8
+2. For each hex (col, row):
+   - If assigned to raion → set pixel to raion territory index (1-139)
+   - If ocean → set pixel to 0
+3. Encode as PNG
+4. Base64 encode for XML embedding
 
-## Phase 5: Map Generation
-
-### Task 5.1: Assign biomes to raions
-**Goal:** Map each raion to appropriate climate biome based on parent oblast
-
-**Test:** `test_biome_assignment()` - verify biomes match climate zones
-
-**Reference data (from climate maps):**
-- Western oblasts (Lviv, Volyn, etc.): All raions → Temperate (7)
-- Central oblasts (Kyiv, Cherkasy, Poltava): All raions → Grassland (3) or Temperate (7)
-- Eastern oblasts (Kharkiv, Donetsk, Luhansk, Dnipropetrovsk): All raions → Grassland (3)
-- Southern oblasts (Odesa, Mykolaiv, Kherson, Zaporizhzhia): All raions → Mediterranean (4) or Savanna (5)
-- Crimea raions: Mediterranean (4)
-
-**Steps:**
-1. Write test checking biome assignments for all 136 raions
-2. Create oblast → biome mapping, apply to all raions in that oblast
-3. Verify against climate zone maps
-4. Handle edge cases: Carpathian raions (Ivano-Frankivsk, Zakarpattia) could use Taiga (6) for mountain areas
-5. Ensure all 136 raions have valid biome assigned
-
-### Task 5.2: Generate zone texture
-**Goal:** Create the PNG texture that maps hex coordinates to territories
-
-**Test:** `test_generate_zone_texture()` - verify texture dimensions and value range
-
-**Steps:**
-1. Write test: texture size should match grid dimensions
-2. Create numpy array: shape = (height, width), dtype = uint8
-3. For each hex (row, col), set pixel value to territory index
-4. Verify: max value < 255 (territory limit)
-5. Convert to PIL Image, verify can encode as PNG
-
-**Validation:** Render zone texture as colored image, visually verify raion shapes and Ukraine outline
-
-### Task 5.3: Create complete map XML
-**Goal:** Generate valid Humankind .hms file with 136 raion territories
-
-**Test:** `test_generate_map_xml()` - parse generated XML and verify structure
-
-**Steps:**
-1. Write test that validates XML against expected schema
-2. Create Document root with TerrainSave element
-3. Add map metadata: Width=150, Height=88
-4. Add all required elements: BiomeNames (10 biomes), TerrainTypeNames (15 types)
-5. Encode zone texture as base64 PNG
-6. Create TerritoryDatabase with 137 territories (136 raions + 1 ocean)
-7. For each territory: set ContinentIndex, Biome, IsOcean flag
-8. Generate elevation texture (flat/128 for first version)
-9. Pretty-print and save as .hms file
+**Territory database:**
+- Territory 0: Ocean (IsOcean=true)
+- Territories 1-139: Raion territories with assigned biomes
+- Each territory: ContinentIndex, Biome, IsOcean flag
 
 **Validation:**
-- XML is well-formed
-- Territory count exactly 137
-- All territory indices 0-136 are used in zone texture
-- Max zone texture value is 136
+- All 139 raions have hexes assigned
+- No territory has 0 hexes
+- Average hexes per raion: ~58 (acceptable range: 30-90)
 
 ---
 
-## Phase 6: Rendering & Validation
+## Phase 5: Template-Based Incremental Map Generation
 
-### Task 6.1: Render generated Ukraine map
-**Goal:** Visualize the generated map to verify correctness
+**Goal:** Build Ukraine map incrementally from a working template, testing each change to identify what breaks editor compatibility.
 
-**Test:** `test_render_ukraine_map()` - verify rendered image shows Ukraine shape
+**Why this approach:**
+- Start from a known-working template (`Huge_Ukraine_template.hmap`) created in the game editor
+- Make ONE small change at a time
+- Test each step in the game editor
+- Identify exactly which modification breaks compatibility
+- Avoid debugging complex multi-change failures
 
-**Steps:**
-1. Write test: rendered image should have expected aspect ratio (~1.7:1 for 150×88)
-2. Use hex rendering code from Phase 1
-3. Color code by raion with different colors per oblast for clarity
-4. Generate both hexagonal and simple square renderings
-5. Count pixels per raion, verify proportions roughly match real areas
+### Template: `Huge_Ukraine_template.hmap`
+- Created in Humankind Map Editor from heightmap import
+- Dimensions: 150×88 (matches config.yaml)
+- Known working: can be opened and edited in game
+- Contains: elevation, terrain types, coastlines from editor
 
-**Validation criteria:**
-- Ukraine shape should be recognizable (not mostly ocean!)
-- Western border (Polish/Slovak/Hungarian) should be clear
-- Black Sea should be visible in south (~26% of map)
-- Crimean peninsula should be identifiable
-- Internal raion divisions should be visible
+### Incremental Steps
 
-### Task 6.2: Create raion label overlay
-**Goal:** Add raion/oblast names to rendered map for verification
+**Step 1: Baseline (step1_baseline.hmap)**
+- Just copy the template unchanged
+- Purpose: Verify our ZIP packaging doesn't break anything
+- Expected: Opens in editor ✓
 
-**Test:** Visual inspection (label key raions and oblast boundaries)
+**Step 2: Add Territories (step2_territories.hmap)**
+- Modify ONLY: ZonesTexture.Bytes (territory assignments)
+- Modify ONLY: TerritoryDatabase (139 raions + 1 ocean)
+- Keep everything else from template
+- Purpose: Test if territory changes break editor
+- Expected: Shows 140 territories instead of 1
 
-**Steps:**
-1. Calculate centroid hex for each of 136 raions
-2. Convert hex coordinates to image pixels
-3. Draw raion names (may be too many, prioritize major ones)
-4. Draw oblast boundaries as thicker lines between raions
-5. Export as separate labeled version
+**Step 3: Add Biomes (step3_biomes.hmap)**
+- Modify ONLY: Biome field in each Territory item
+- Keep zones texture from step 2
+- Purpose: Test if biome assignments break editor
+- Expected: Territories have correct biome colors
 
-**Output:** `ukraine_map_labeled.png` for manual verification
+**Step 4: Add Elevation (step4_elevation.hmap)**
+- Modify ONLY: ElevationTexture.Bytes
+- Add Carpathian and Crimean mountain heights
+- Keep everything else from step 3
+- Purpose: Test if elevation changes break editor
 
-### Task 6.3: Statistical validation
-**Goal:** Verify map metrics are reasonable for 136 raions
+**Step 5: Add Rivers (step5_rivers.hmap)**
+- Modify ONLY: RiverTexture.Bytes
+- Add Dnipro, Dniester, Southern Bug rivers
+- Keep everything else from step 4
+- Purpose: Test if river changes break editor
 
-**Test:** `test_map_statistics()` - check multiple quality metrics
+### Implementation: `incremental_map_builder.py`
 
-**Metrics to validate:**
-- Total hexes: exactly 13,200 (150×88)
-- Landmass hexes: 9,000-10,500 (target ~9,750 for 136 raions)
-- Each raion: 30-150 hexes
-- Average raion size: 65-80 hexes (target ~72)
-- Ocean hexes: 2,700-4,200 (~26% of map)
-- Hex size: ~6.7 km per hex side
-- No raion has 0 hexes
-- All 136 raions have at least 20 hexes (playable minimum)
+```python
+class IncrementalMapBuilder:
+    def __init__(self, template_path):
+        # Load template (Huge_Ukraine_template.hmap)
+        # Parse Save.hms and Descriptor.hmd
+
+    def step1_baseline(self) -> Path:
+        # Just re-package template unchanged
+
+    def step2_territories(self) -> Path:
+        # Modify zones texture + territory database only
+
+    def step3_biomes(self) -> Path:
+        # Modify biome assignments only
+
+    def step4_elevation(self) -> Path:
+        # Modify elevation texture only
+
+    def step5_rivers(self) -> Path:
+        # Modify river texture only
+```
+
+### Output Directory
+All incremental maps saved to:
+- `output/incremental/step1_baseline.hmap`
+- `output/incremental/step2_territories.hmap`
+- `output/incremental/step3_biomes.hmap`
+- `output/incremental/step4_elevation.hmap`
+- `output/incremental/step5_rivers.hmap`
+
+Also copied to game folder:
+- `Humankind/Maps/incremental_ukraine/`
+
+### Testing Protocol
+For each step:
+1. Generate the .hmap file
+2. Copy to game Maps folder
+3. Open Humankind Map Editor
+4. Try to open the map
+5. Record: Does it open? Can you edit? Any errors?
+6. If broken: previous step is last known good
+
+### Validation Checklist
+- [ ] Step 1: Opens in editor
+- [ ] Step 2: Shows 140 territories, opens in editor
+- [ ] Step 3: Biomes display correctly, opens in editor
+- [ ] Step 4: Mountains visible, opens in editor
+- [ ] Step 5: Rivers visible, opens in editor
 
 ---
 
-## Phase 7: Refinement
+## Phase 6: Visualization & Testing
 
-### Task 7.1: Adjust hex resolution if needed
-**Goal:** Fine-tune for optimal gameplay with 136 raions
+### Task 6.1: Create comprehensive visualizations
+**Goal:** Generate multiple views of the map for validation
 
-**Based on validation results:**
-- If raions too small (< 50 hexes avg): Map is already at maximum size (150×88), cannot increase
-- If raions too large (> 90 hexes avg): Unlikely given our calculations, but could reduce map if needed
-- Target: 65-80 hexes per raion average
-- Accept range: 30-150 hexes per raion
+**Visualizations to create:**
+1. **Rigid hex grid with raion colors**
+   - Each hex properly rendered as hexagon
+   - Raions colored using graph coloring (adjacent raions different colors)
+   - Shows actual hex boundaries
 
-**Note:** Since we're using maximum map size, adjustment options are limited. Focus on validating the assignment algorithm.
+2. **Oblast-level map with cities**
+   - Hexes colored by oblast (not raion)
+   - Major cities marked with labels
+   - Easier to verify high-level geography
 
-### Task 7.2: Handle edge cases
-**Goal:** Fix any geometric issues with raion assignments
+3. **Zone texture preview**
+   - Direct rendering of zone texture PNG
+   - Each pixel = territory index as color
+   - Verifies zone texture encoding
 
-**Potential issues:**
-- Crimean peninsula raions might be disconnected from mainland
-- Small raions might get too few hexes (<20)
-- Coastal raions might have irregular shapes
-- Border raions might be assigned incorrectly
+4. **Coverage analysis map**
+   - Ukraine land vs ocean/buffer zones
+   - Shows hex density and coverage
 
-**Solutions:**
-- Manual adjustments to hex assignments
-- Coastline smoothing
-- Minimum hex count enforcement
+**Output directory:** `output/visualizations/`
 
-### Task 7.3: Split Crimea into Geographic-Historical Regions
-**Goal:** Divide Crimea into 6 territories based on natural geography AND historical Crimean Tatar population divisions
+### Task 6.2: Run comprehensive test suite
+**Goal:** Validate all aspects of generated map
 
-**Background:** Rather than using modern administrative divisions for Crimea, use historically and geographically meaningful regions that align with the traditional Crimean Tatar subgroups:
+**Test categories:**
+1. **Grid tests** (Phase 2)
+   - Hex coordinate system
+   - Geographic bounds coverage
 
-**6 Crimean Territories:**
-1. **Western Steppe** (Tarkhankut-Kezlev Nogay region)
-   - Northwestern peninsula area around Yevpatoria
-   - Flat steppe terrain, historically Nogay Tatar population
+2. **Data tests** (Phase 3)
+   - Raion geometries loaded correctly
+   - 139 raions present
 
-2. **Northern Steppe** (Perekop-Dzhankoy Nogay region)
-   - Northern Crimea connecting to mainland via Perekop isthmus
-   - Steppe terrain, gateway to Crimea
+3. **Territory tests** (Phase 4)
+   - All hexes assigned
+   - Coverage statistics correct
+   - No raion with 0 hexes
 
-3. **Kerch Peninsula** (Eastern Nogay region)
-   - Eastern peninsula toward Kerch Strait
-   - Steppe terrain, historically Nogay Tatar area
+4. **Generation tests** (Phase 5)
+   - XML well-formed
+   - Zone texture dimensions correct
+   - Territory count = 140
 
-4. **Mountain Region** (Tatlar/Mountain Tatars)
-   - Central mountainous area (Crimean Mountains)
-   - Home of the Mountain Tatars (Tatlar)
+**Test execution:**
+```bash
+pytest tests/ -v --tb=short
+```
 
-5. **Southern Coast** (Yalıboylular)
-   - Narrow coastal strip from Sevastopol to Feodosia
-   - Mediterranean climate, historically Yalıboylular (coastal Tatars)
+### Task 6.3: Statistical analysis and reporting
+**Goal:** Generate comprehensive statistics about the map
 
-6. **Sevastopol** (Special city status)
-   - Historic naval port city
-   - Distinct strategic and cultural significance
+**Statistics to compute:**
+1. **Coverage metrics:**
+   - Total hexes: 13,200
+   - Ukraine hexes: ~8,102 (61.4%)
+   - Ocean hexes: ~5,098 (38.6%)
 
-**Target hex counts:** 25-50 hexes per Crimean territory (playable size)
+2. **Territory size distribution:**
+   - Min/max/average hexes per raion
+   - Size histogram
+   - Outliers (< 30 or > 90 hexes)
+
+3. **Oblast analysis:**
+   - Hexes per oblast
+   - Raions per oblast
+   - Geographic accuracy check
+
+4. **Biome distribution:**
+   - Hexes per biome type
+   - Biome diversity
+
+**Output:** `output/statistics/map_analysis.txt`
+
+---
+
+## Phase 7: SRTM Elevation Data Integration
+
+**Goal:** Download real SRTM elevation data and assign elevation levels to each hex in the map grid, integrated into the incremental map builder pipeline.
+
+### Data Source: SRTM (Shuttle Radar Topography Mission)
+
+**Why SRTM:**
+- Free, well-documented, widely used
+- 30m resolution (SRTM GL1) or 90m (SRTM GL3) - more than enough for our ~5km hexes
+- Covers Ukraine completely (between 60°N and 56°S)
+- Same source type as raion data (authoritative geospatial data)
+
+**Data access options:**
+1. **OpenTopography API** - direct download, requires free account
+2. **USGS EarthExplorer** - official source, manual download
+3. **elevation** Python package - automated SRTM download and caching
+4. **rasterio + SRTM tiles** - download .hgt files directly
+
+**Recommended: `elevation` package**
+```bash
+pip install elevation
+```
+- Automatically downloads and caches SRTM tiles
+- Clips to bounding box
+- Returns GeoTIFF ready for processing
+
+### Task 7.1: Create SRTM Data Fetcher
+
+**Goal:** Download and cache SRTM elevation data for Ukraine bounds
+
+**File:** `srtm_elevation.py`
 
 **Implementation:**
-- Create custom polygon boundaries for these 6 regions
-- Override standard raion assignment for Crimea hexes
-- Assign appropriate biomes:
-  - Steppe regions (1, 2, 3): Mediterranean (4) or Grassland (3)
-  - Mountain Region (4): Taiga (6) or Mediterranean (4)
-  - Southern Coast (5): Mediterranean (4)
-  - Sevastopol (6): Mediterranean (4)
+```python
+class SRTMElevationFetcher:
+    def __init__(self, bounds: dict):
+        """
+        bounds: {min_lon, max_lon, min_lat, max_lat}
+        From config.yaml: 20-44°E, 43-53°N
+        """
+        self.bounds = bounds
+        self.cache_dir = Path("data/srtm_cache")
 
-### Task 7.4: Add optional features
-**Goal:** Enhance map if time permits
+    def fetch(self) -> np.ndarray:
+        """
+        Download SRTM data for bounds, return elevation array.
+        Uses elevation package or direct .hgt download.
+        """
+        # Returns: 2D numpy array of elevation in meters
+        pass
 
-**Optional additions:**
-- Elevation data (Carpathian Mountains, Crimean Mountains)
-- Major rivers (Dnipro, Dniester)
-- Strategic resources based on real geology
-- Starting positions for empires
+    def get_elevation_at(self, lon: float, lat: float) -> float:
+        """Get elevation at specific coordinate."""
+        pass
+```
+
+**Caching strategy:**
+- Store downloaded tiles in `data/srtm_cache/`
+- Cache merged GeoTIFF for Ukraine bounds
+- Re-use cached data on subsequent runs
+
+### Task 7.2: Create Hex Elevation Mapper
+
+**Goal:** Sample SRTM elevation for each hex center and quantize to game levels
+
+**File:** `hex_elevation_mapper.py`
+
+**Humankind elevation levels (16 total, -3 to 12):**
+```
+Level  Elevation (m)    Terrain Type
+-----  -------------    ------------
+-3     < -100           Deep ocean
+-2     -100 to -50      Ocean
+-1     -50 to 0         Shallow water / Sea of Azov
+ 0     0 to 50          Coastal lowlands
+ 1     50 to 100        Low plains
+ 2     100 to 150       Plains (most of Ukraine)
+ 3     150 to 200       Rolling plains
+ 4     200 to 300       Low hills
+ 5     300 to 400       Hills (Podolian Upland)
+ 6     400 to 600       High hills (Donets Ridge)
+ 7     600 to 800       Low mountains
+ 8     800 to 1000      Mountains (Crimean)
+ 9     1000 to 1200     High mountains
+10     1200 to 1500     Alpine (Carpathian foothills)
+11     1500 to 1800     High alpine
+12     > 1800           Peaks (Hoverla: 2061m)
+```
+
+**Implementation:**
+```python
+class HexElevationMapper:
+    def __init__(self, srtm_fetcher: SRTMElevationFetcher,
+                 grid_width: int, grid_height: int,
+                 bounds: dict):
+        self.srtm = srtm_fetcher
+        self.width = grid_width
+        self.height = grid_height
+        self.bounds = bounds
+
+    def get_hex_elevations(self) -> Dict[Tuple[int, int], int]:
+        """
+        For each hex (col, row), sample SRTM and return quantized level.
+        Returns: {(col, row): elevation_level} where level is -3 to 12
+        """
+        hex_elevations = {}
+        for row in range(self.height):
+            for col in range(self.width):
+                lon, lat = self._pixel_to_geo(col, row)
+                elev_meters = self.srtm.get_elevation_at(lon, lat)
+                level = self._quantize_elevation(elev_meters)
+                hex_elevations[(col, row)] = level
+        return hex_elevations
+
+    def _quantize_elevation(self, meters: float) -> int:
+        """Convert meters to game elevation level (-3 to 12)."""
+        if meters < -100: return -3
+        if meters < -50: return -2
+        if meters < 0: return -1
+        if meters < 50: return 0
+        if meters < 100: return 1
+        if meters < 150: return 2
+        if meters < 200: return 3
+        if meters < 300: return 4
+        if meters < 400: return 5
+        if meters < 600: return 6
+        if meters < 800: return 7
+        if meters < 1000: return 8
+        if meters < 1200: return 9
+        if meters < 1500: return 10
+        if meters < 1800: return 11
+        return 12
+```
+
+**Ocean handling:**
+- Hexes outside Ukraine boundary → check if water body
+- Black Sea / Sea of Azov → negative elevation levels
+- SRTM has "no data" for ocean → use bathymetry or assign -2
+
+### Task 7.3: Integrate into Incremental Map Builder
+
+**Goal:** Add `step5_elevation()` that uses real SRTM data
+
+**Update `incremental_map_builder.py`:**
+
+```python
+def step5_elevation(self) -> Path:
+    """Step 5: Add SRTM-based elevation data."""
+    print("STEP 5: SRTM Elevation")
+    print("  Change: ElevationTexture.Bytes from real SRTM data")
+
+    # Fetch SRTM data
+    from srtm_elevation import SRTMElevationFetcher
+    from hex_elevation_mapper import HexElevationMapper
+
+    fetcher = SRTMElevationFetcher(self.bounds)
+    mapper = HexElevationMapper(fetcher, self.width, self.height, self.bounds)
+
+    hex_elevations = mapper.get_hex_elevations()
+
+    # Create elevation texture PNG
+    # Humankind uses R channel for elevation: 0-15 maps to levels -3 to 12
+    img = Image.new('RGBA', (self.width, self.height), (0, 0, 0, 255))
+    pixels = img.load()
+
+    for (col, row), level in hex_elevations.items():
+        # Convert level (-3 to 12) to pixel value (0 to 15)
+        pixel_value = level + 3  # -3→0, 0→3, 12→15
+        pixels[col, row] = (pixel_value, 0, 0, 255)
+
+    # Encode and update save content
+    buffer = io.BytesIO()
+    img.save(buffer, format='PNG')
+    elevation_b64 = base64.b64encode(buffer.getvalue()).decode('ascii')
+
+    content = self._update_texture_bytes(
+        self.current_save_content, 'ElevationTexture', elevation_b64
+    )
+
+    # Statistics
+    level_counts = {}
+    for level in hex_elevations.values():
+        level_counts[level] = level_counts.get(level, 0) + 1
+    print(f"  Elevation distribution: {dict(sorted(level_counts.items()))}")
+
+    self.current_save_content = content
+    output_path = self.output_dir / "step5_elevation.hmap"
+    self._save_hmap(content, self.descriptor_content, output_path)
+
+    return output_path
+```
+
+### Task 7.4: Validation and Visualization
+
+**Goal:** Verify elevation data is correct before game import
+
+**Validation steps:**
+1. Generate elevation heatmap visualization
+2. Verify Carpathians show highest values (levels 10-12)
+3. Verify Crimean mountains show medium-high (levels 7-9)
+4. Verify central plains are flat (levels 1-3)
+5. Verify Black Sea is negative (levels -1 to -3)
+
+**Visualization output:** `output/visualizations/ukraine_srtm_elevation.png`
+- Color gradient from blue (ocean) to white (peaks)
+- Overlay hex grid
+- Mark key geographic features
+
+**Expected elevation ranges (validation):**
+- Hoverla (Carpathians): 2061m → level 12 ✓
+- Ai-Petri (Crimea): 1234m → level 10 ✓
+- Kyiv: 179m → level 3 ✓
+- Odesa: 40m → level 0 ✓
+- Black Sea: -2200m max → level -3 ✓
+
+### Task 7.5: Handle Edge Cases
+
+**Ocean/water bodies:**
+- SRTM returns "no data" (-32768) for ocean
+- Solution: If no data AND outside Ukraine boundary → assign ocean level
+- Black Sea depth: use -2 (medium depth)
+- Sea of Azov depth: use -1 (shallow)
+
+**Border smoothing:**
+- Coastal hexes may have mixed land/water
+- Solution: Use hex center elevation, or average of samples within hex
+
+**Missing tiles:**
+- Some SRTM tiles may be unavailable
+- Solution: Fall back to interpolation from neighbors, or use SRTM void-filled version
+
+### Dependencies
+
+**Python packages:**
+```
+elevation>=1.1.3      # SRTM download and processing
+rasterio>=1.3.0       # GeoTIFF reading
+numpy>=1.24.0         # Array operations
+```
+
+**Alternative if `elevation` package fails:**
+```python
+# Direct .hgt file download from USGS
+# Files named like: N44E033.hgt (1°×1° tiles)
+# Ukraine needs tiles from N43-N52, E020-E040
+```
+
+### Output Files
+
+1. `data/srtm_cache/ukraine_srtm.tif` - Cached SRTM GeoTIFF
+2. `output/visualizations/ukraine_srtm_elevation.png` - Visualization
+3. `output/incremental/step5_elevation.hmap` - Map with real elevation
+
+### Task 7.6: Add Major Rivers
+
+**Goal:** Mark river hexes in RiverTexture
+
+**Major rivers to include:**
+1. **Dnipro** - Main river, bisects Ukraine north to south
+2. **Dniester** - Western border with Moldova
+3. **Southern Bug** - Southern Ukraine
+4. **Danube Delta** - Southwest corner
+5. **Donets** - Eastern Ukraine
+
+**Data source options:**
+- Natural Earth rivers (1:10m scale)
+- OpenStreetMap waterways
+- HydroSHEDS river network
+
+**Implementation in `step6_rivers()`:**
+- Load river geometries
+- For each hex, check if river passes through
+- Mark in RiverTexture
+
+### Task 7.7: Package Final Map
+
+**Goal:** Create distributable .hmap with all features
+
+**Final map includes:**
+- 140 territories (139 raions + ocean)
+- Biomes by oblast
+- SRTM elevation
+- Major rivers
+
+**Output:** `output/maps/ukraine_raions_final.hmap`
 
 ---
 
-## Phase 8: Documentation & Delivery
+## Phase 8: Documentation & Completion
 
-### Task 8.1: Create user guide
-**Goal:** Document how to use the map in Humankind
+### Task 8.1: Update main README
+**Goal:** Document the complete Ukraine raion map system
 
-**Contents:**
-- How to install the map
-- What each raion represents (136 districts organized by 27 oblasts)
-- Recommended game settings (8-10 empires for 136 territories)
-- Known limitations
+**Sections to update:**
+1. **Project overview**
+   - Add Ukraine raion map as main deliverable
+   - Update statistics (150×88, 139 raions, 61% coverage)
 
-### Task 8.2: Create development documentation
-**Goal:** Explain the code for future improvements
+2. **Usage guide**
+   - How to generate the map
+   - How to install in Humankind
+   - Configuration options
 
-**Contents:**
-- Architecture overview
-- Key algorithms used
-- How to adjust parameters
-- How to generate maps for other regions
+3. **Technical details**
+   - Hex grid system
+   - Territory assignment algorithm
+   - Biome mapping strategy
 
-### Task 8.3: Package map for distribution
-**Goal:** Create game-ready map file
+4. **File structure**
+   - Describe key Python modules
+   - Configuration system
+   - Test organization
 
-**Steps:**
-1. Generate final .hms file
-2. Create Descriptor.hmd with metadata
-3. Package as .hmap (ZIP archive)
-4. Test: verify file can be unzipped and structure is correct
+### Task 8.2: Create comprehensive examples
+**Goal:** Provide working examples for users
+
+**Examples to create:**
+1. **generate_ukraine_map.py** - Main generation script
+2. **visualize_map.py** - Create all visualizations
+3. **analyze_map.py** - Run statistical analysis
+4. **Configuration examples** - Different map variants
+
+### Task 8.3: Final validation and delivery
+**Goal:** Ensure everything works end-to-end
+
+**Validation checklist:**
+- [ ] All tests pass (pytest tests/ -v)
+- [ ] Configuration system works
+- [ ] Map generates without errors
+- [ ] Visualizations render correctly
+- [ ] Statistics compute properly
+- [ ] Documentation is complete
+- [ ] README is up to date
+- [ ] Code is well-commented
+
+**Deliverables:**
+1. `ukraine_raions.hms` - Generated map file
+2. Visualization images in `output/visualizations/`
+3. Statistics report in `output/statistics/`
+4. Complete documentation
+5. Working test suite
 
 ---
 
@@ -473,32 +795,56 @@ Each task should have tests written BEFORE implementation:
 
 ## Success Criteria
 
-**Must Have:**
-✓ Map loads in Humankind game
-✓ 136 Ukrainian raions (districts) are territories
-✓ Geographic shape of Ukraine is recognizable
-✓ Each raion has 20-150 hexes (target: 30-120)
-✓ Average raion size: 65-80 hexes
-✓ Biomes match climate zones (based on parent oblast)
-✓ Rendered map shows Ukraine clearly with <30% ocean
-✓ All 136 raions have at least some hexes (no 0-hex territories)
-✓ Map uses full 150×88 maximum size efficiently
+**Phase 1-3 Completed ✅:**
+✅ Configuration system with optimized bounds
+✅ Hex grid system (150×88, ~5.2km hex size)
+✅ Geographic coordinate mapping (lat/lon ↔ hex)
+✅ Ukraine raion data loaded (139 raions)
+✅ Visualizations working (rigid hex grid, oblast maps)
 
-**Nice to Have:**
-- Elevation data for mountains (Carpathians, Crimean ranges)
-- Major rivers (Dnipro, Dniester, Southern Bug)
-- Optimized hex sizes for all raions
-- Starting positions for 8-10 empires
-- Historical/strategic resources based on real Ukrainian geography
+**Phase 4-5 Must Have:**
+- [ ] Territory assignment algorithm (hex → raion mapping)
+- [ ] 61% Ukraine coverage (~8,102 hexes)
+- [ ] Average ~58 hexes per raion
+- [ ] Biome assignment by oblast
+- [ ] Zone texture generation (150×88 PNG)
+- [ ] Complete .hms XML file generation
+- [ ] All 139 raions have hexes (no 0-hex territories)
 
-**Failure Conditions:**
-✗ Map shows mostly ocean (>50% ocean hexes)
-✗ Raions not geographically accurate
-✗ Any raion has 0 hexes
-✗ More than 5 raions have <20 hexes
-✗ Ukraine shape not recognizable
-✗ Map doesn't load in game
-✗ Territory count ≠ 137 (136 raions + 1 ocean)
+**Phase 6 Must Have:**
+- [ ] Comprehensive visualizations
+- [ ] All tests pass
+- [ ] Statistical analysis report
+- [ ] Geographic accuracy validated
+
+**Phase 7 Must Have (SRTM Elevation):**
+- [ ] SRTM data fetcher (download/cache tiles)
+- [ ] Hex elevation mapper (sample + quantize to 16 levels)
+- [ ] Integration into step5_elevation() in incremental builder
+- [ ] Validation: Carpathians=10-12, Crimea=7-9, Plains=1-3, Sea=-1 to -3
+- [ ] Elevation visualization
+
+**Phase 7-8 Nice to Have:**
+- [ ] Major rivers (Dnipro, Dniester) via step6_rivers()
+- [ ] .hmap packaging
+- [ ] User documentation
+- [ ] Installation guide
+
+**Current Status:**
+- Configuration: ✅ Optimized (20-44°E, 43-52°N, 6-hex margins)
+- Hex Grid: ✅ 150×88 working
+- Raion Data: ✅ 139 raions loaded
+- Visualization: ✅ Phase 3 complete
+- Territory Assignment: 🔄 Ready to implement
+- Map Generation: ⏳ Pending
+- Testing: ⏳ Pending
+
+**Quality Metrics:**
+- Target coverage: 61.4% Ukraine, 38.6% ocean/buffer ✅
+- Target raion size: 30-90 hexes (avg ~58) ✅
+- Hex size: ~5.20 km ✅
+- No raion < 20 hexes (TBD)
+- Ukraine shape recognizable (TBD)
 
 ---
 
@@ -529,3 +875,201 @@ Each task should have tests written BEFORE implementation:
 - Validate manually at each phase boundary
 - Save working versions before making major changes
 - Use version control (git) to track progress
+
+---
+
+## Phase 9: Land Cover Data Migration (Copernicus 100m)
+
+**Goal:** Replace ESA WorldCover 10m with Copernicus 100m to reduce storage requirements from ~45GB to ~500MB.
+
+### Problem
+
+The original `landcover_fetcher.py` uses ESA WorldCover 10m data:
+- Resolution: 10m per pixel
+- Tile size: 3°×3° tiles, each ~1.3GB
+- Ukraine bounds (20-44°E, 43-53°N) require 36 tiles
+- Total storage: **~45GB**
+- Many tiles failed to download (0-byte cache files)
+
+This is overkill for our hex grid (~5km hexes).
+
+### Solution: Copernicus Global Land Service 100m (CGLS-LC100)
+
+**Dataset:** Copernicus Global Land Cover Layers Collection 3
+- Resolution: 100m per pixel (10x coarser)
+- Coverage: Global
+- Format: Cloud Optimized GeoTIFF on AWS S3
+- Years: 2015-2019 (annual)
+- Access: Free, no authentication required
+- Estimated size for Ukraine: **~400-500MB**
+
+**Data source:**
+- AWS S3: `s3://copernicus-land/global/lcv/`
+- Google Earth Engine: `COPERNICUS/Landcover/100m/Proba-V-C3/Global`
+- Direct download: https://land.copernicus.eu/global/products/lc
+
+### Land Cover Classes (CGLS-LC100)
+
+```
+Value   Class Name              → Humankind Terrain
+-----   ----------              ------------------
+0       Unknown                 → CityTerrain (default)
+20      Shrubs                  → DryGrass
+30      Herbaceous vegetation   → Prairie
+40      Cultivated              → Prairie (cropland)
+50      Urban / built up        → CityTerrain
+60      Bare / sparse           → Sterile
+70      Snow and ice            → MountainSnow
+80      Permanent water         → Ocean/Lake
+90      Herbaceous wetland      → CoastalWater
+100     Moss and lichen         → RockyField
+111     Closed forest (evergreen needle) → Forest
+112     Closed forest (evergreen broad)  → Forest
+113     Closed forest (deciduous needle) → Forest
+114     Closed forest (deciduous broad)  → Forest
+115     Closed forest (mixed)   → Forest
+116     Closed forest (unknown) → Forest
+121     Open forest (evergreen needle)   → WoodLand
+122     Open forest (evergreen broad)    → WoodLand
+123     Open forest (deciduous needle)   → WoodLand
+124     Open forest (deciduous broad)    → WoodLand
+125     Open forest (mixed)     → WoodLand
+126     Open forest (unknown)   → WoodLand
+200     Oceans, seas            → Ocean
+```
+
+### Task 9.1: Create Copernicus Land Cover Fetcher
+
+**File:** `landcover_fetcher_copernicus.py` (or update existing)
+
+**Implementation:**
+```python
+class CopernicusLandCoverFetcher:
+    """
+    Fetches land cover data from Copernicus CGLS-LC100.
+    Uses 100m resolution - much smaller than ESA WorldCover 10m.
+    """
+
+    # AWS S3 URL for Copernicus data
+    S3_BASE_URL = "https://s3.eu-central-1.amazonaws.com/copernicus-land/lcv/..."
+
+    def __init__(self, bounds: dict, cache_dir: Path):
+        self.bounds = bounds
+        self.cache_dir = cache_dir
+
+    def _validate_cache(self, path: Path) -> bool:
+        """Check if cached file is valid (exists and non-empty)."""
+        return path.exists() and path.stat().st_size > 1000
+
+    def fetch_tile(self, tile_id: str) -> Optional[np.ndarray]:
+        """Download tile if not cached, skip if already valid."""
+        cache_path = self.cache_dir / f"{tile_id}.npy"
+
+        if self._validate_cache(cache_path):
+            print(f"  Using cached: {tile_id}")
+            return np.load(cache_path)
+
+        # Download from S3...
+
+    def get_landcover_grid(self, width: int, height: int) -> np.ndarray:
+        """Get land cover for hex grid."""
+        pass
+```
+
+**Key improvements:**
+1. Cache validation checks file size > 1000 bytes (not just exists)
+2. Removes corrupt/incomplete cache files before re-downloading
+3. Uses 100m data instead of 10m (100x fewer pixels)
+
+### Task 9.2: Update Terrain Mapper Integration
+
+**File:** `terrain_mapper.py`
+
+Update to use new Copernicus class mapping:
+```python
+COPERNICUS_TO_TERRAIN = {
+    0: 'CityTerrain',      # Unknown → default land
+    20: 'DryGrass',        # Shrubs
+    30: 'Prairie',         # Herbaceous
+    40: 'Prairie',         # Cultivated (cropland)
+    50: 'CityTerrain',     # Urban
+    60: 'Sterile',         # Bare
+    70: 'MountainSnow',    # Snow/ice
+    80: 'Ocean',           # Water
+    90: 'CoastalWater',    # Wetland
+    111: 'Forest',         # Closed forest types
+    112: 'Forest',
+    113: 'Forest',
+    114: 'Forest',
+    115: 'Forest',
+    116: 'Forest',
+    121: 'WoodLand',       # Open forest types
+    122: 'WoodLand',
+    123: 'WoodLand',
+    124: 'WoodLand',
+    125: 'WoodLand',
+    126: 'WoodLand',
+    200: 'Ocean',          # Sea
+}
+```
+
+### Task 9.3: Clean Up Old Cache
+
+**Action:** Remove corrupt ESA WorldCover cache files
+```bash
+# Remove 0-byte and small corrupt cache files
+find data/landcover_cache -name "*.npy" -size -1k -delete
+find data/landcover_cache -name "*_meta.pkl" -size 0 -delete
+```
+
+### Task 9.4: Test and Validate
+
+**Validation steps:**
+1. Download Copernicus data for Ukraine bounds
+2. Generate land cover grid (150×88)
+3. Compare distribution with expected Ukraine geography:
+   - Majority should be Cultivated (40) - Ukraine is heavily farmed
+   - Some Forest (111-126) in Carpathians and Polesia
+   - Some Herbaceous (30) in steppes
+   - Water (80, 200) for Black Sea and rivers
+
+**Expected storage:**
+- Cache files: ~400-500MB total (vs 45GB for ESA 10m)
+- Grid cache: ~few KB (150×88 = 13,200 bytes)
+
+### Dependencies
+
+**Python packages (already installed):**
+```
+rasterio>=1.3.0    # GeoTIFF reading
+numpy>=1.24.0      # Array operations
+```
+
+**No new packages required** - same as ESA WorldCover fetcher.
+
+### Implementation Status
+
+**Completed:**
+- [x] Created `landcover_fetcher_copernicus.py` with CopernicusLandCoverFetcher class
+- [x] Cache validation (checks file size, removes corrupt files)
+- [x] Uses rasterio windowed reading for efficient partial download
+- [x] Cleaned up old corrupt ESA WorldCover cache files
+
+**To test:**
+```bash
+cd /home/shivers/py/humankind
+python landcover_fetcher_copernicus.py
+```
+
+This will:
+1. Download only the Ukraine region from the global GeoTIFF (~100-200MB vs full 8GB file)
+2. Cache it locally in `data/landcover_cache/copernicus_ukraine_region.npy`
+3. Generate a 150×88 grid of land cover values
+4. Print distribution statistics
+
+### References
+
+- [Copernicus CGLS-LC100 Documentation](https://land.copernicus.eu/global/products/lc)
+- [Google Earth Engine Catalog](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_Landcover_100m_Proba-V-C3_Global)
+- [Zenodo Direct Download](https://zenodo.org/records/3939050)
+- [AWS S3 Access (Digital Earth Africa)](https://docs.digitalearthafrica.org/en/latest/data_specs/CGLS_LULC_specs.html)

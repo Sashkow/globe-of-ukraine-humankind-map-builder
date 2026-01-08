@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?amplitude-serialization-serializer version="5"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Brain, Amplitude.AI" number="3"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Desires.ResourceAllocation, Amplitude.AI" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Hsm.StateMachineContext`2, Amplitude.AI" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Hsm.StateMachineContext`2+TransitionContext, Amplitude.AI" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Framework.Simulation.BaseSimulationEntity, Amplitude.Framework" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Framework.Simulation.Collections.DescriptorCollection, Amplitude.Framework" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.AnalysisData.MajorEmpire.MajorEmpireData, Amplitude.Mercury.AI.Brain" number="1,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.AnalysisData.Settlement.SettlementData, Amplitude.Mercury.AI.Brain" number="1,0,0,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.AnalysisData.Territory.TerritoryData, Amplitude.Mercury.AI.Brain" number="0,0,1,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.BehaviorTrees.ArmyContext, Amplitude.Mercury.AI.Brain" number="2,4,1,4,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.MajorEmpireBrain, Amplitude.Mercury.AI.Brain" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.ArmyMission`1, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.AssistWithBombardment, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.DoCulturalAction, Amplitude.Mercury.AI.Brain" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.DoSettlementAction, Amplitude.Mercury.AI.Brain" number="0,0,0,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.EnactMinorTreaty, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.EscortEmbarkedArmy, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.ExplorationMission, Amplitude.Mercury.AI.Brain" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.GoToClaimTerritory, Amplitude.Mercury.AI.Brain" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.InternationalAction, Amplitude.Mercury.AI.Brain" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.MilitaryMission, Amplitude.Mercury.AI.Brain" number="0,1,2,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.PatronizeMinor, Amplitude.Mercury.AI.Brain" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.StealthEscortMilitaryMission, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.StealthMission, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.UseSettlerAbilityInTerritory, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Data.Simulation.NarratorMapEntry, Amplitude.Mercury.Data" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Data.Simulation.SimulationEventEffect_AddEmpireWidePathfindingFlags, Amplitude.Mercury.Data" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Data.Simulation.SimulationEventEffect_AddNarratorSentence, Amplitude.Mercury.Data" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Data.Simulation.SimulationEventEffect_ModifyIdeologicalAxis, Amplitude.Mercury.Data" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveDescriptor, Amplitude.Mercury.Firstpass" number="9,0,2,0,0,1,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveSessionSlotDescriptor, Amplitude.Mercury.Firstpass" number="6,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveSlotsDescriptor, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.Agreements, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ArmyCutForestActionInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ArmyKilledBySpyHuntNotificationData, Amplitude.Mercury.Firstpass" number="0,0,0,0,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ArmyStealTerritoryActionInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.AvailableGrievanceCollection, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BattleAftermathInfo, Amplitude.Mercury.Firstpass" number="0,1,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BattleContenderAftermathInfo, Amplitude.Mercury.Firstpass" number="1,0,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BattleLostNotificationData, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BattleOrderInfo, Amplitude.Mercury.Firstpass" number="3,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BattleWonNotificationData, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentAftermathEmpireInfo, Amplitude.Mercury.Firstpass" number="0,1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentAftermathInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentAftermathUnitCollectionInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentSufferedNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ConstructionInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ConsulatAgreementPropositionInfo, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.CulturalOsmosisEventInfo, Amplitude.Mercury.Firstpass" number="0,0,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.DiplomaticDemandInfo, Amplitude.Mercury.Firstpass" number="1,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.DiplomaticGrievanceInfo, Amplitude.Mercury.Firstpass" number="1,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.DiplomaticWarInfo, Amplitude.Mercury.Firstpass" number="1,1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.DistrictInfo, Amplitude.Mercury.Firstpass" number="2,0,1,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EditorOrderCreateArmyAt, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EditorOrderForceWar, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireAchievementStatistics, Amplitude.Mercury.Firstpass" number="3,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireStatistics, Amplitude.Mercury.Firstpass" number="3,0,3,1,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireWarPeriod, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EndGameNotificationData, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EntityNameInfo, Amplitude.Mercury.Firstpass" number="0,0,0,1,2,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EraStarInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.FameRankingEmpireInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.FimsInfo, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InfiltrationInfo, Amplitude.Mercury.Firstpass" number="0,0,5,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InfiltrationInfoGains, Amplitude.Mercury.Firstpass" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InternationalBribeInfo, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InternationalCivicVoteInfo, Amplitude.Mercury.Firstpass" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InternationalCrisisVoteInfo, Amplitude.Mercury.Firstpass" number="0,0,4,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InternationalIdeologicalConsensusInfo, Amplitude.Mercury.Firstpass" number="0,0,2,0,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.LootInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.MercenaryInfo, Amplitude.Mercury.Firstpass" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.MilitaryAgreementsDowngradedNotificationData, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.MoodMessageNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.NaturalWonderDiscoveredNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.OnGoingDemandCollection, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.PopulationGainNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.PopulationLossMigrationNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.PopulationLossStarvationNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.PopulationStolenNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.RansackInfo, Amplitude.Mercury.Firstpass" number="0,1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.RansackSuccessfulByYouNotificationData, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.RansackSuccessfulOnYouNotificationData, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligionChangedNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligionInfo, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligiousConversionEndedNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligiousConversionStartedNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ResourceAccessInfo, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ResourceDepositInfo, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.RoundHouseInfo, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SiegeInfo, Amplitude.Mercury.Firstpass" number="2,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SpawnPointInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.StatusInfo, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SurrenderDemandInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SurrenderProposition, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SurrenderTerritoryInfo, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TenetChosenNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TenetInfo, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TenetTierInfo, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,0,2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TerritoryInfo, Amplitude.Mercury.Firstpass" number="1,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeNotificationData, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadDestroyedDestinationNotificationData, Amplitude.Mercury.Firstpass" number="2,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadDestroyedOriginNotificationData, Amplitude.Mercury.Firstpass" number="2,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadFreezedDestinationNotificationData, Amplitude.Mercury.Firstpass" number="2,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadFreezedOriginNotificationData, Amplitude.Mercury.Firstpass" number="2,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.ListOfStructReference`1, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Sandbox.Sandbox, Amplitude.Mercury.Firstpass" number="2,0,4,3,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.AgentAncillary, Amplitude.Mercury.Firstpass" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.AirStrike, Amplitude.Mercury.Firstpass" number="4,0,0,0,1,1,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.AirStrikeRepository, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Army, Amplitude.Mercury.Firstpass" number="0,1,3,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArmyDisruptDistrictAction, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArmyExploitDistrictAction, Amplitude.Mercury.Firstpass" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArmyGoToAction, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArmyManipulateCityAction, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArmyWatchCityAction, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArtificialWonder, Amplitude.Mercury.Firstpass" number="0,1,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArtificialWonderManager, Amplitude.Mercury.Firstpass" number="1,0,8,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArtilleryStrike, Amplitude.Mercury.Firstpass" number="2,1,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BaseHumanMinorFactionSpawner`1, Amplitude.Mercury.Firstpass" number="0,0,0,1,2,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BaseTradeRelation, Amplitude.Mercury.Firstpass" number="0,0,0,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Battle, Amplitude.Mercury.Firstpass" number="1,0,3,4,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Battle+BattleVisionMap, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleArena, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleContender, Amplitude.Mercury.Firstpass" number="0,1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleEntityWithSimulation`1, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleGroup, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleRepository, Amplitude.Mercury.Firstpass" number="5,0,2,1,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleUnit, Amplitude.Mercury.Firstpass" number="0,1,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BeliefManager`1, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CivilizationsManager, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Construction, Amplitude.Mercury.Firstpass" number="1,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ConstructionQueue, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ContinentsExplorationManager, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CrisisInfo, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CrisisMinorFactionSpawner, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CultureManager, Amplitude.Mercury.Firstpass" number="1,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CuriosityManager, Amplitude.Mercury.Firstpass" number="1,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CuriositySpawner`1, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfCommerce, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfCommunication, Amplitude.Mercury.Firstpass" number="1,1,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfCulture, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfDefense, Amplitude.Mercury.Firstpass" number="4,0,1,2,0,1,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfDevelopment, Amplitude.Mercury.Firstpass" number="2,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfForeignAffairs, Amplitude.Mercury.Firstpass" number="1,0,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfResources, Amplitude.Mercury.Firstpass" number="2,1,1,3,1,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfScience, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfTheInterior, Amplitude.Mercury.Firstpass" number="8,2,8,4,3,7,3,2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfTransportation, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DiplomaticAmbassy, Amplitude.Mercury.Firstpass" number="0,1,11,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DiplomaticAncillary, Amplitude.Mercury.Firstpass" number="1,0,8,0,0,0,3,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DiplomaticMoral, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DiplomaticRelation, Amplitude.Mercury.Firstpass" number="3,1,12,5,0,0,2,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.District, Amplitude.Mercury.Firstpass" number="2,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Empire, Amplitude.Mercury.Firstpass" number="1,0,3,4,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.EmpireWideConstruction, Amplitude.Mercury.Firstpass" number="1,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.EndGameController, Amplitude.Mercury.Firstpass" number="4,0,0,1,0,1,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ExternalTradeExchange, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ExternalTradeRelation, Amplitude.Mercury.Firstpass" number="0,0,0,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.GameStatisticsController, Amplitude.Mercury.Firstpass" number="1,0,3,1,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.HumanMinorFactionSpawner, Amplitude.Mercury.Firstpass" number="0,2,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.IdeologicalAxis, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.InfiltrationArmyAction, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.IntelCuriositySpawner, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.InternationalAncillary, Amplitude.Mercury.Firstpass" number="0,0,4,2,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.LandmarkManager, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MajorEmpire, Amplitude.Mercury.Firstpass" number="15,0,13,7,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MajorEmpireTerritory, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MercenaryController, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Militia, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MinorEmpire, Amplitude.Mercury.Firstpass" number="1,0,6,0,2,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MinorFactionManager, Amplitude.Mercury.Firstpass" number="0,3,0,1,0,2,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MinorToMajorRelation, Amplitude.Mercury.Firstpass" number="0,1,4,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NarrativeEvent, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NarrativeEventManager, Amplitude.Mercury.Firstpass" number="2,0,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NarrativeEventVariable, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NarratorAncillary, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NationalProject, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NodeLinkedByTradeRoad, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Participant_Army, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.PollutionManager, Amplitude.Mercury.Firstpass" number="1,1,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Region+SurroundingTerritoryCollection, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Religion, Amplitude.Mercury.Firstpass" number="3,0,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ReligionManager, Amplitude.Mercury.Firstpass" number="7,0,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.RoundHouse, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ScenarioController, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SecondaryLandTransit, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Settlement, Amplitude.Mercury.Firstpass" number="5,0,1,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SettlementStatusOnEventCollection, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Siege, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SimulationEventEffect_AddEmpireBattleAbility, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SimulationEventEffect_AddEmpireWidePathfindingFlags, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Squadron, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.StatusManager, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.StealingTradeAction, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.StealingTradeAncillary, Amplitude.Mercury.Firstpass" number="0,0,0,3,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.StealthAncillary, Amplitude.Mercury.Firstpass" number="0,0,6,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TechnologicalEra, Amplitude.Mercury.Firstpass" number="1,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Technology, Amplitude.Mercury.Firstpass" number="1,0,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Territory, Amplitude.Mercury.Firstpass" number="1,0,4,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TerritoryNode, Amplitude.Mercury.Firstpass" number="0,0,0,3,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TerritoryPathfindManager, Amplitude.Mercury.Firstpass" number="0,1,0,3,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TradeController, Amplitude.Mercury.Firstpass" number="2,0,2,20,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TradeNode, Amplitude.Mercury.Firstpass" number="1,0,0,3,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TransitController, Amplitude.Mercury.Firstpass" number="0,1,0,0,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Unit, Amplitude.Mercury.Firstpass" number="0,1,1,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.UnitCollection, Amplitude.Mercury.Firstpass" number="0,1,1,0,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.VisibilityController, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.VisionWard, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.World, Amplitude.Mercury.Firstpass" number="5,2,6,7,3,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.Landmark, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.LandmarkDatabase, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.SpawnPoint, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerrainSave, Amplitude.Mercury.Terrain" number="4,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerrainSaveDescriptor, Amplitude.Mercury.Terrain" number="7,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.Territory, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerritoryDatabase, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.WorldMapEntitiesProvider, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<Document>
+    <TerrainSave>
+        <FormatRevision>10</FormatRevision>
+        <Width>130</Width>
+        <Height>76</Height>
+        <UseMapCycling>true</UseMapCycling>
+        <UseProceduralMountainChains>false</UseProceduralMountainChains>
+        <BiomeNames Length="10">
+            <String>Arctic</String>
+            <String>Badlands</String>
+            <String>Desert</String>
+            <String>Grassland</String>
+            <String>Mediterranean</String>
+            <String>Savanna</String>
+            <String>Taiga</String>
+            <String>Temperate</String>
+            <String>Tropical</String>
+            <String>Tundra</String>
+        </BiomeNames>
+        <TerrainTypeNames Length="15">
+            <String>CityTerrain</String>
+            <String>CoastalWater</String>
+            <String>DryGrass</String>
+            <String>Forest</String>
+            <String>Lake</String>
+            <String>Mountain</String>
+            <String>MountainSnow</String>
+            <String>Ocean</String>
+            <String>Prairie</String>
+            <String>RockyField</String>
+            <String>RockyForest</String>
+            <String>Sterile</String>
+            <String>StoneField</String>
+            <String>Wasteland</String>
+            <String>WoodLand</String>
+        </TerrainTypeNames>
+        <POINames Length="57">
+            <String>None</String>
+            <String>POI_NaturalModifier01</String>
+            <String>POI_NaturalModifier02</String>
+            <String>POI_NaturalModifier03</String>
+            <String>POI_NaturalModifier04</String>
+            <String>POI_NaturalModifier05</String>
+            <String>POI_NaturalModifier06</String>
+            <String>POI_NaturalModifier07</String>
+            <String>POI_NaturalModifier08</String>
+            <String>POI_NaturalModifier09</String>
+            <String>POI_NaturalModifier10</String>
+            <String>POI_NaturalModifier11</String>
+            <String>POI_NaturalModifier12</String>
+            <String>POI_NaturalModifier13</String>
+            <String>POI_NaturalModifier14</String>
+            <String>POI_NaturalModifier15</String>
+            <String>POI_NaturalModifier16</String>
+            <String>POI_NaturalModifier17</String>
+            <String>POI_NaturalModifier18</String>
+            <String>POI_NaturalModifier19</String>
+            <String>POI_NaturalModifier20</String>
+            <String>POI_NaturalModifier21</String>
+            <String>POI_NaturalModifier22</String>
+            <String>POI_NaturalModifier23</String>
+            <String>POI_NaturalModifier24</String>
+            <String>POI_ResourceDeposit01</String>
+            <String>POI_ResourceDeposit02</String>
+            <String>POI_ResourceDeposit03</String>
+            <String>POI_ResourceDeposit04</String>
+            <String>POI_ResourceDeposit05</String>
+            <String>POI_ResourceDeposit06</String>
+            <String>POI_ResourceDeposit07</String>
+            <String>POI_ResourceDeposit08</String>
+            <String>POI_ResourceDeposit11</String>
+            <String>POI_ResourceDeposit12</String>
+            <String>POI_ResourceDeposit13</String>
+            <String>POI_ResourceDeposit14</String>
+            <String>POI_ResourceDeposit15</String>
+            <String>POI_ResourceDeposit16</String>
+            <String>POI_ResourceDeposit17</String>
+            <String>POI_ResourceDeposit18</String>
+            <String>POI_ResourceDeposit19</String>
+            <String>POI_ResourceDeposit20</String>
+            <String>POI_ResourceDeposit21</String>
+            <String>POI_ResourceDeposit22</String>
+            <String>POI_ResourceDeposit23</String>
+            <String>POI_ResourceDeposit24</String>
+            <String>POI_ResourceDeposit25</String>
+            <String>POI_ResourceDeposit26</String>
+            <String>POI_ResourceDeposit27</String>
+            <String>POI_ResourceDeposit28</String>
+            <String>POI_ResourceDeposit29</String>
+            <String>POI_ResourceDeposit30</String>
+            <String>POI_ResourceDeposit31</String>
+            <String>POI_ResourceDeposit32</String>
+            <String>POI_ResourceDeposit33</String>
+            <String>POI_ResourceDeposit34</String>
+        </POINames>
+        <NaturalWonderNames Length="31">
+            <String>AitutakiLagoon</String>
+            <String>AtacamaDesert</String>
+            <String>BungleBungleRange</String>
+            <String>ChocolateHills</String>
+            <String>DanakilDesert</String>
+            <String>Eldgja</String>
+            <String>GreatBarrierReef</String>
+            <String>GreatBlueHole</String>
+            <String>HalongBay</String>
+            <String>KawahIjen</String>
+            <String>LakeBaikal</String>
+            <String>LakeHillier</String>
+            <String>LakeNatron</String>
+            <String>MaranhensesNationalPark</String>
+            <String>MonumentValley</String>
+            <String>MountEverest</String>
+            <String>MountKilimandjaro</String>
+            <String>MountKilimanjaro</String>
+            <String>MountMulu</String>
+            <String>MountRoraima</String>
+            <String>MountVesuvius</String>
+            <String>Pamukkale</String>
+            <String>PeritoMorenoGlacier</String>
+            <String>SalarUyuni</String>
+            <String>SaltoAngel</String>
+            <String>UluruRocks</String>
+            <String>VictoriaFalls</String>
+            <String>Vinicunca</String>
+            <String>WhakaariVolcano</String>
+            <String>Yellowstone</String>
+            <String>ZumaRock</String>
+        </NaturalWonderNames>
+        <LandmarksDefinitionNames Length="5">
+            <String>Landmark_Desert</String>
+            <String>Landmark_Forest</String>
+            <String>Landmark_Lake</String>
+            <String>Landmark_Mountain</String>
+            <String>Landmark_River</String>
+        </LandmarksDefinitionNames>
+        <ElevationTexture.Width>130</ElevationTexture.Width>
+        <ElevationTexture.Height>76</ElevationTexture.Height>
+        <ElevationTexture.Format>4</ElevationTexture.Format>
+        <ElevationTexture.Bytes Length="1215">iVBORw0KGgoAAAANSUhEUgAAAIIAAABMCAYAAACh4W85AAAEhklEQVR4Ae1Za2/bMAxsh2H7yfvtG/JhuQJXMIxsiTJlvWgg0IuiyOPp4qafn38+4gkEPn4EBoEAEAgiBA++EAgiKCL8fI7x4SPHss/1VVqZ8yo5ueShgdFjl0MGcrKdIshbzT6LzDZXn1K7nJ+R1rcjAsHXxdRj2u3SNs/fcsCjMeqWWHKhwFfreHMxeK57YvMWl9W5tvcEWvt+C3bzCfevBgDuBTr9sGWt9BjzqTnaR5tHoBl+Xo7phy1T0uOzeSgLPkd7uNfSeqqV5dxWtu6K0BOgs0KfrdWA6+2vJgbPPavlk8SmVZLab89LkEzcMOmuCDh7ZkAM2L2ZghiaHG9Gg040IcKgud4S1qyXIIjgTI9QBAXorDdDpWEezpp3KIK51OcbZlUE97jdHZ7jPuyqxCGlElxPrfVIKhShAeosMl1jzDnZxzrnadurdYvDzVEvJG44d2SMQhFuIEDuCBCEJGGb2+O9fvncyw68M5rYH7Fke+f7w2VFuDPYiWtcFToIwU+VA8OmS0S4K0hDPsuaUiVaJdjaf6u4t/Qri+WtxJcUYctqDJK0JIVHSEEEDxQ7+BhGEbwZ2QHLaY/0JgGACEWYlg6+gVcRIdTAtwhWby3wryKCNfCw90VgiK+GFmz0hWltby1IAMTMitAqEFk+niFb9qXdjv1WF7GV38s1YuHZwiH6VQH/M4Tzy2DbyRQYSFw8wqjCtbogmYhLkqONOfDfmcO5/PfZmYAMDNerNX818GAWBGPZ57q1tfqAfdEeqEEpCaxBd7IvytsYm/liSf8yINmndNE51tg/2i/nLX19rmVv0hak2VAVUvVJ4mOZZHHY6r1H89ru8nhyNbgNpyfQTYiQKuCdSaXON81tqAq3EcFUCA/jSdWg14Wpfln0qJW3D1cQoQqWPzudkul1M5ciwnctJlUDxO9K5m9A8p3liOAKZAdV6KUIvc7NU7TWYjI1cCVuLWbPfcspAn4VfOB3gMEfEGAUEgCq9RTBkwANflgaqfgSqvUUAdkNqAqjKYAkAfpLKAKTyN22o3XufwHnghocnfPif7BBEoPBYiwO5yUZ/AcRxcSbfzxZBF6wy1oPaoAbmEvk6JYm91WowZH/QSF7CyuJw5vV4BOHSRSogi4gfcl5zGHMFnDoPuZmftZ8WVQVkUVVS29D/On5AIHEI/eTKFiWfWE+ZXd9IlAVLpZHFl32L7odZvvUOeWClzf568WxBHalBthydg7WXs4pOWNAm7McBwy3MqREcUs8lYJDu5kJwRxKcBnKJhW4VyFSvmuTl7684quN5WzftO8IElT05fgs4ZK1Wn+y6OjLccm5PW2mJQJAqy1YKeAkF9uSfUcEsPgoOcfbZmoieIOR8scCsk3Z6DnYWuz1/h7jmdSrBz6mM3Xx9djk7GbjUISbAR/1uFCEC5WZ6cbn0gxFyCG0yXoogqHQKymATjsUQSOy6TiIsGnhddpBBI3IpuMgwqaF12kHETQim46DCJsWXqcdRNCIbDoOImxaeJ12EEEjsuk4iLBp4XXaQQSNyKbj/2OrepkzJ6uJAAAAAElFTkSuQmCC</ElevationTexture.Bytes>
+        <ZonesTexture.Width>130</ZonesTexture.Width>
+        <ZonesTexture.Height>76</ZonesTexture.Height>
+        <ZonesTexture.Format>4</ZonesTexture.Format>
+        <ZonesTexture.Bytes Length="253">iVBORw0KGgoAAAANSUhEUgAAAIIAAABMCAYAAACh4W85AAAAxElEQVR4Ae3QMQEAAADCoPVPbQwfiEBhwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDDwGhiarAABYQPanAAAAABJRU5ErkJggg==</ZonesTexture.Bytes>
+        <POITexture.Width>130</POITexture.Width>
+        <POITexture.Height>76</POITexture.Height>
+        <POITexture.Format>4</POITexture.Format>
+        <POITexture.Bytes Length="444">iVBORw0KGgoAAAANSUhEUgAAAIIAAABMCAYAAACh4W85AAABg0lEQVR4Ae2UwQkAIRDE1uu/Z5VDSBGJIMx3MmHXzOz7e3ICn7x/9R+BREiFn0AiJEIi5AAEugiwUKdEUM9P+USAhTolgnp+yicCLNQpEdTzUz4RYKFOiaCen/KJAAt1SgT1/JRPBFioUyKo56d8IsBCnRJBPT/lEwEW6pQI6vkpnwiwUKdEUM9P+USAhTolgnp+yicCLNQpEdTzUz4RYKFOiaCen/KJAAt1SgT1/JRPBFioUyKo56d8IsBCnRJBPT/lEwEW6pQI6vkpnwiwUKdEUM9P+USAhTolgnp+yicCLNQpEdTzUz4RYKFOiaCen/KJAAt1SgT1/JRPBFioUyKo56d8IsBCnRJBPT/lEwEW6pQI6vkpnwiwUKdEUM9P+USAhTolgnp+yicCLNQpEdTzUz4RYKFOiaCen/KJAAt1SgT1/JRPBFioUyKo56d8IsBCnRJBPT/lEwEW6pQI6vkpnwiwUKdEUM9P+USAhTolgnp+yicCLNQpEdTzUz4RYKFOB57MAZfshBRFAAAAAElFTkSuQmCC</POITexture.Bytes>
+        <VisibilityTexture.Width>130</VisibilityTexture.Width>
+        <VisibilityTexture.Height>76</VisibilityTexture.Height>
+        <VisibilityTexture.Format>4</VisibilityTexture.Format>
+        <VisibilityTexture.Bytes Length="441">iVBORw0KGgoAAAANSUhEUgAAAIIAAABMCAYAAACh4W85AAABgElEQVR4Ae3UsRGAQBDDwIf+e4aBREV4L3JqWXPXcxwC59wgIPARIAIPfgJEIAIROBABHyEW04kI0/NXngixmE5EmJ6/8kSIxXQiwvT8lSdCLKYTEabnrzwRYjGdiDA9f+WJEIvpRITp+StPhFhMJyJMz195IsRiOhFhev7KEyEW04kI0/NXngixmE5EmJ6/8kSIxXQiwvT8lSdCLKYTEabnrzwRYjGdiDA9f+WJEIvpRITp+StPhFhMJyJMz195IsRiOhFhev7KEyEW04kI0/NXngixmE5EmJ6/8kSIxXQiwvT8lSdCLKYTEabnrzwRYjGdiDA9f+WJEIvpRITp+StPhFhMJyJMz195IsRiOhFhev7KEyEW04kI0/NXngixmE5EmJ6/8kSIxXQiwvT8lSdCLKYTEabnrzwRYjGdiDA9f+WJEIvpRITp+StPhFhMJyJMz195IsRiOhFhev7KEyEW04kI0/NXngixmE5EmJ6/8kSIxXQiwvT8lSdCLKbTC6HJAZfMA8O4AAAAAElFTkSuQmCC</VisibilityTexture.Bytes>
+        <RoadTexture.Width>130</RoadTexture.Width>
+        <RoadTexture.Height>76</RoadTexture.Height>
+        <RoadTexture.Format>4</RoadTexture.Format>
+        <RoadTexture.Bytes Length="253">iVBORw0KGgoAAAANSUhEUgAAAIIAAABMCAYAAACh4W85AAAAxElEQVR4Ae3QMQEAAADCoPVPbQwfiEBhwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDDwGhiarAABYQPanAAAAABJRU5ErkJggg==</RoadTexture.Bytes>
+        <RiverTexture.Width>130</RiverTexture.Width>
+        <RiverTexture.Height>76</RiverTexture.Height>
+        <RiverTexture.Format>4</RiverTexture.Format>
+        <RiverTexture.Bytes Length="442">iVBORw0KGgoAAAANSUhEUgAAAIIAAABMCAYAAACh4W85AAABgUlEQVR4Ae3UsRGAAAzDQKBg/43hoNEQ/lRuLetyPs99OAQuCBD4CBCBBz8BIhCBCByIgI8Qi+lEhOn5K0+EWEwnIkzPX3kixGI6EWF6/soTIRbTiQjT81eeCLGYTkSYnr/yRIjFdCLC9PyVJ0IsphMRpuevPBFiMZ2IMD1/5YkQi+lEhOn5K0+EWEwnIkzPX3kixGI6EWF6/soTIRbTiQjT81eeCLGYTkSYnr/yRIjFdCLC9PyVJ0IsphMRpuevPBFiMZ2IMD1/5YkQi+lEhOn5K0+EWEwnIkzPX3kixGI6EWF6/soTIRbTiQjT81eeCLGYTkSYnr/yRIjFdCLC9PyVJ0IsphMRpuevPBFiMZ2IMD1/5YkQi+lEhOn5K0+EWEwnIkzPX3kixGI6EWF6/soTIRbTiQjT81eeCLGYTkSYnr/yRIjFdCLC9PyVJ0IsphMRpuevPBFiMZ2IMD1/5YkQi+lEhOn5K0+EWEwnIkzPX3kixGI6EWF6/soTIRbT6QVaVwKcY0FxYgAAAABJRU5ErkJggg==</RiverTexture.Bytes>
+        <NaturalWonderTexture.Width>130</NaturalWonderTexture.Width>
+        <NaturalWonderTexture.Height>76</NaturalWonderTexture.Height>
+        <NaturalWonderTexture.Format>4</NaturalWonderTexture.Format>
+        <NaturalWonderTexture.Bytes Length="442">iVBORw0KGgoAAAANSUhEUgAAAIIAAABMCAYAAACh4W85AAABgUlEQVR4Ae2UMQ4AIBCD1P//WY0OPAKMQ9dScnOPcX/PTmDZAdT/E0iETHgEEiEREiEHINBFgIU6JYJ6fsonAizUKRHU81M+EWChTomgnp/yiQALdUoE9fyUTwRYqFMiqOenfCLAQp0SQT0/5RMBFuqUCOr5KZ8IsFCnRFDPT/lEgIU6JYJ6fsonAizUKRHU81M+EWChTomgnp/yiQALdUoE9fyUTwRYqFMiqOenfCLAQp0SQT0/5RMBFuqUCOr5KZ8IsFCnRFDPT/lEgIU6JYJ6fsonAizUKRHU81M+EWChTomgnp/yiQALdUoE9fyUTwRYqFMiqOenfCLAQp0SQT0/5RMBFuqUCOr5KZ8IsFCnRFDPT/lEgIU6JYJ6fsonAizUKRHU81M+EWChTomgnp/yiQALdUoE9fyUTwRYqFMiqOenfCLAQp0SQT0/5RMBFuqUCOr5KZ8IsFCnRFDPT/lEgIU6JYJ6fsonAizUKRHU81M+EWChTomgnp/yiQALdTq4JwKWgCex4QAAAABJRU5ErkJggg==</NaturalWonderTexture.Bytes>
+        <MatchingSeedTexture.Width>130</MatchingSeedTexture.Width>
+        <MatchingSeedTexture.Height>76</MatchingSeedTexture.Height>
+        <MatchingSeedTexture.Format>4</MatchingSeedTexture.Format>
+        <MatchingSeedTexture.Bytes Length="253">iVBORw0KGgoAAAANSUhEUgAAAIIAAABMCAYAAACh4W85AAAAxElEQVR4Ae3QMQEAAADCoPVPbQwfiEBhwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDDwGhiarAABYQPanAAAAABJRU5ErkJggg==</MatchingSeedTexture.Bytes>
+        <LandmarksTexture.Width>130</LandmarksTexture.Width>
+        <LandmarksTexture.Height>76</LandmarksTexture.Height>
+        <LandmarksTexture.Format>4</LandmarksTexture.Format>
+        <LandmarksTexture.Bytes Length="442">iVBORw0KGgoAAAANSUhEUgAAAIIAAABMCAYAAACh4W85AAABgUlEQVR4Ae2UMQ4AIBCD1P//WY0OPAKMQ9dScnOPcX/PTmDZAdT/E0iETHgEEiEREiEHINBFgIU6JYJ6fsonAizUKRHU81M+EWChTomgnp/yiQALdUoE9fyUTwRYqFMiqOenfCLAQp0SQT0/5RMBFuqUCOr5KZ8IsFCnRFDPT/lEgIU6JYJ6fsonAizUKRHU81M+EWChTomgnp/yiQALdUoE9fyUTwRYqFMiqOenfCLAQp0SQT0/5RMBFuqUCOr5KZ8IsFCnRFDPT/lEgIU6JYJ6fsonAizUKRHU81M+EWChTomgnp/yiQALdUoE9fyUTwRYqFMiqOenfCLAQp0SQT0/5RMBFuqUCOr5KZ8IsFCnRFDPT/lEgIU6JYJ6fsonAizUKRHU81M+EWChTomgnp/yiQALdUoE9fyUTwRYqFMiqOenfCLAQp0SQT0/5RMBFuqUCOr5KZ8IsFCnRFDPT/lEgIU6JYJ6fsonAizUKRHU81M+EWChTomgnp/yiQALdTq4JwKWgCex4QAAAABJRU5ErkJggg==</LandmarksTexture.Bytes>
+        <LandmarkDatabase>
+            <Landmarks Null="true" />
+        </LandmarkDatabase>
+        <TerritoryDatabase>
+            <Territories Length="1">
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+            </Territories>
+        </TerritoryDatabase>
+        <EntitiesProvider>
+            <SpawnPoints Null="true" />
+        </EntitiesProvider>
+        <Author Null="true" />
+        <Description Null="true" />
+        <CreationDate>0</CreationDate>
+        <LastEditionDate>0</LastEditionDate>
+        <FailureFlags>515</FailureFlags>
+        <MapName Null="true" />
+        <DownloadContentNeeded>0</DownloadContentNeeded>
+    </TerrainSave>
+</Document>

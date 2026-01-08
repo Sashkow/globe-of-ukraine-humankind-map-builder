@@ -15,3 +15,36 @@ tests/test_outputs/
 # Parsed and rendered maps
 parsed_maps/
 rendered_maps/
+
+# Large data caches (downloaded/generated data)
+data/landcover_cache/
+data/srtm_cache/
+data/osm_waterways/
+data/rivers/
+data/administrative_regions_2020/
+data/*.zip
+
+# Keep only essential data files:
+# - ukraine_raions.geojson (required for map generation)
+# - ukraine_adm2.json (administrative regions metadata)
+# - humankind_ukraine_terrain_modifiers.md (documentation)
+
+# Diagnostic screenshots
+diagnostic_screenshots/
+
+# Output files (except final maps we want to share)
+output/heightmaps/
+output/phase4/
+output/terrain_tests/
+output/visualizations/
+output/*.hmap
+output/.build_version.json
+
+# Keep incremental build outputs and final maps
+# output/incremental/ - kept for sharing progress
+# output/maps/ - kept for final maps
+
+# Temporary/personal files
+system_prompt.md
+revision_tags.txt
+revision_tags_old.txt

@@ -1,0 +1,1085 @@
+﻿<?amplitude-serialization-serializer version="5"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Brain, Amplitude.AI" number="3"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Desires.ResourceAllocation, Amplitude.AI" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Hsm.StateMachineContext`2, Amplitude.AI" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.AI.Hsm.StateMachineContext`2+TransitionContext, Amplitude.AI" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Framework.Simulation.BaseSimulationEntity, Amplitude.Framework" number="1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Framework.Simulation.Collections.DescriptorCollection, Amplitude.Framework" number="2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.AnalysisData.MajorEmpire.MajorEmpireData, Amplitude.Mercury.AI.Brain" number="1,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.AnalysisData.Settlement.SettlementData, Amplitude.Mercury.AI.Brain" number="1,0,0,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.AnalysisData.Territory.TerritoryData, Amplitude.Mercury.AI.Brain" number="0,0,1,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.BehaviorTrees.ArmyContext, Amplitude.Mercury.AI.Brain" number="2,4,1,4,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.MajorEmpireBrain, Amplitude.Mercury.AI.Brain" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.ArmyMission`1, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.AssistWithBombardment, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.DoCulturalAction, Amplitude.Mercury.AI.Brain" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.DoSettlementAction, Amplitude.Mercury.AI.Brain" number="0,0,0,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.EnactMinorTreaty, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.EscortEmbarkedArmy, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.ExplorationMission, Amplitude.Mercury.AI.Brain" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.GoToClaimTerritory, Amplitude.Mercury.AI.Brain" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.InternationalAction, Amplitude.Mercury.AI.Brain" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.MilitaryMission, Amplitude.Mercury.AI.Brain" number="0,1,2,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.PatronizeMinor, Amplitude.Mercury.AI.Brain" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.StealthEscortMilitaryMission, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.StealthMission, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.AI.Brain.Tasks.UseSettlerAbilityInTerritory, Amplitude.Mercury.AI.Brain" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Data.Simulation.NarratorMapEntry, Amplitude.Mercury.Data" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Data.Simulation.SimulationEventEffect_AddEmpireWidePathfindingFlags, Amplitude.Mercury.Data" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Data.Simulation.SimulationEventEffect_AddNarratorSentence, Amplitude.Mercury.Data" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Data.Simulation.SimulationEventEffect_ModifyIdeologicalAxis, Amplitude.Mercury.Data" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveDescriptor, Amplitude.Mercury.Firstpass" number="9,0,2,0,0,1,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveSessionSlotDescriptor, Amplitude.Mercury.Firstpass" number="6,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Game.GameSaveSlotsDescriptor, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.Agreements, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ArmyCutForestActionInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ArmyKilledBySpyHuntNotificationData, Amplitude.Mercury.Firstpass" number="0,0,0,0,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ArmyStealTerritoryActionInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.AvailableGrievanceCollection, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BattleAftermathInfo, Amplitude.Mercury.Firstpass" number="0,1,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BattleContenderAftermathInfo, Amplitude.Mercury.Firstpass" number="1,0,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BattleLostNotificationData, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BattleOrderInfo, Amplitude.Mercury.Firstpass" number="3,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BattleWonNotificationData, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentAftermathEmpireInfo, Amplitude.Mercury.Firstpass" number="0,1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentAftermathInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentAftermathUnitCollectionInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.BombardmentSufferedNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ConstructionInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ConsulatAgreementPropositionInfo, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.CulturalOsmosisEventInfo, Amplitude.Mercury.Firstpass" number="0,0,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.DiplomaticDemandInfo, Amplitude.Mercury.Firstpass" number="1,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.DiplomaticGrievanceInfo, Amplitude.Mercury.Firstpass" number="1,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.DiplomaticWarInfo, Amplitude.Mercury.Firstpass" number="1,1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.DistrictInfo, Amplitude.Mercury.Firstpass" number="2,0,1,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EditorOrderCreateArmyAt, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EditorOrderForceWar, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireAchievementStatistics, Amplitude.Mercury.Firstpass" number="3,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireStatistics, Amplitude.Mercury.Firstpass" number="3,0,3,1,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EmpireWarPeriod, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EndGameNotificationData, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EntityNameInfo, Amplitude.Mercury.Firstpass" number="0,0,0,1,2,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.EraStarInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.FameRankingEmpireInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.FimsInfo, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InfiltrationInfo, Amplitude.Mercury.Firstpass" number="0,0,5,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InfiltrationInfoGains, Amplitude.Mercury.Firstpass" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InternationalBribeInfo, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InternationalCivicVoteInfo, Amplitude.Mercury.Firstpass" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InternationalCrisisVoteInfo, Amplitude.Mercury.Firstpass" number="0,0,4,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.InternationalIdeologicalConsensusInfo, Amplitude.Mercury.Firstpass" number="0,0,2,0,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.LootInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.MercenaryInfo, Amplitude.Mercury.Firstpass" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.MilitaryAgreementsDowngradedNotificationData, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.MoodMessageNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.NaturalWonderDiscoveredNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.OnGoingDemandCollection, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.PopulationGainNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.PopulationLossMigrationNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.PopulationLossStarvationNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.PopulationStolenNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.RansackInfo, Amplitude.Mercury.Firstpass" number="0,1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.RansackSuccessfulByYouNotificationData, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.RansackSuccessfulOnYouNotificationData, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligionChangedNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligionInfo, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligiousConversionEndedNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ReligiousConversionStartedNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ResourceAccessInfo, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.ResourceDepositInfo, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.RoundHouseInfo, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SiegeInfo, Amplitude.Mercury.Firstpass" number="2,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SpawnPointInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.StatusInfo, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SurrenderDemandInfo, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SurrenderProposition, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.SurrenderTerritoryInfo, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TenetChosenNotificationData, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TenetInfo, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TenetTierInfo, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,0,2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TerritoryInfo, Amplitude.Mercury.Firstpass" number="1,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeNotificationData, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadDestroyedDestinationNotificationData, Amplitude.Mercury.Firstpass" number="2,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadDestroyedOriginNotificationData, Amplitude.Mercury.Firstpass" number="2,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadFreezedDestinationNotificationData, Amplitude.Mercury.Firstpass" number="2,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Interop.TradeRoadFreezedOriginNotificationData, Amplitude.Mercury.Firstpass" number="2,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.ListOfStructReference`1, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Sandbox.Sandbox, Amplitude.Mercury.Firstpass" number="2,0,4,3,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.AgentAncillary, Amplitude.Mercury.Firstpass" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.AirStrike, Amplitude.Mercury.Firstpass" number="4,0,0,0,1,1,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.AirStrikeRepository, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Army, Amplitude.Mercury.Firstpass" number="0,1,3,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArmyDisruptDistrictAction, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArmyExploitDistrictAction, Amplitude.Mercury.Firstpass" number="0,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArmyGoToAction, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArmyManipulateCityAction, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArmyWatchCityAction, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArtificialWonder, Amplitude.Mercury.Firstpass" number="0,1,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArtificialWonderManager, Amplitude.Mercury.Firstpass" number="1,0,8,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ArtilleryStrike, Amplitude.Mercury.Firstpass" number="2,1,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BaseHumanMinorFactionSpawner`1, Amplitude.Mercury.Firstpass" number="0,0,0,1,2,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BaseTradeRelation, Amplitude.Mercury.Firstpass" number="0,0,0,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Battle, Amplitude.Mercury.Firstpass" number="1,0,3,4,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Battle+BattleVisionMap, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleArena, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleContender, Amplitude.Mercury.Firstpass" number="0,1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleEntityWithSimulation`1, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleGroup, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleRepository, Amplitude.Mercury.Firstpass" number="5,0,2,1,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BattleUnit, Amplitude.Mercury.Firstpass" number="0,1,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.BeliefManager`1, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CivilizationsManager, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Construction, Amplitude.Mercury.Firstpass" number="1,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ConstructionQueue, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ContinentsExplorationManager, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CrisisInfo, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CrisisMinorFactionSpawner, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CultureManager, Amplitude.Mercury.Firstpass" number="1,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CuriosityManager, Amplitude.Mercury.Firstpass" number="1,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.CuriositySpawner`1, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfCommerce, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfCommunication, Amplitude.Mercury.Firstpass" number="1,1,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfCulture, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfDefense, Amplitude.Mercury.Firstpass" number="4,0,1,2,0,1,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfDevelopment, Amplitude.Mercury.Firstpass" number="2,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfForeignAffairs, Amplitude.Mercury.Firstpass" number="1,0,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfResources, Amplitude.Mercury.Firstpass" number="2,1,1,3,1,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfScience, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfTheInterior, Amplitude.Mercury.Firstpass" number="8,2,8,4,3,7,3,2"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DepartmentOfTransportation, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DiplomaticAmbassy, Amplitude.Mercury.Firstpass" number="0,1,11,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DiplomaticAncillary, Amplitude.Mercury.Firstpass" number="1,0,8,0,0,0,3,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DiplomaticMoral, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.DiplomaticRelation, Amplitude.Mercury.Firstpass" number="3,1,12,5,0,0,2,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.District, Amplitude.Mercury.Firstpass" number="2,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Empire, Amplitude.Mercury.Firstpass" number="1,0,3,4,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.EmpireWideConstruction, Amplitude.Mercury.Firstpass" number="1,0,2,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.EndGameController, Amplitude.Mercury.Firstpass" number="4,0,0,1,0,1,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ExternalTradeExchange, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ExternalTradeRelation, Amplitude.Mercury.Firstpass" number="0,0,0,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.GameStatisticsController, Amplitude.Mercury.Firstpass" number="1,0,3,1,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.HumanMinorFactionSpawner, Amplitude.Mercury.Firstpass" number="0,2,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.IdeologicalAxis, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.InfiltrationArmyAction, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.IntelCuriositySpawner, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.InternationalAncillary, Amplitude.Mercury.Firstpass" number="0,0,4,2,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.LandmarkManager, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MajorEmpire, Amplitude.Mercury.Firstpass" number="15,0,13,7,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MajorEmpireTerritory, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MercenaryController, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Militia, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MinorEmpire, Amplitude.Mercury.Firstpass" number="1,0,6,0,2,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MinorFactionManager, Amplitude.Mercury.Firstpass" number="0,3,0,1,0,2,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.MinorToMajorRelation, Amplitude.Mercury.Firstpass" number="0,1,4,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NarrativeEvent, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NarrativeEventManager, Amplitude.Mercury.Firstpass" number="2,0,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NarrativeEventVariable, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NarratorAncillary, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NationalProject, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.NodeLinkedByTradeRoad, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Participant_Army, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.PollutionManager, Amplitude.Mercury.Firstpass" number="1,1,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Region+SurroundingTerritoryCollection, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Religion, Amplitude.Mercury.Firstpass" number="3,0,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ReligionManager, Amplitude.Mercury.Firstpass" number="7,0,0,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.RoundHouse, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.ScenarioController, Amplitude.Mercury.Firstpass" number="0,0,0,0,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SecondaryLandTransit, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Settlement, Amplitude.Mercury.Firstpass" number="5,0,1,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SettlementStatusOnEventCollection, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Siege, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SimulationEventEffect_AddEmpireBattleAbility, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.SimulationEventEffect_AddEmpireWidePathfindingFlags, Amplitude.Mercury.Firstpass" number="0,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Squadron, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.StatusManager, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.StealingTradeAction, Amplitude.Mercury.Firstpass" number="0,0,0,1,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.StealingTradeAncillary, Amplitude.Mercury.Firstpass" number="0,0,0,3,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.StealthAncillary, Amplitude.Mercury.Firstpass" number="0,0,6,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TechnologicalEra, Amplitude.Mercury.Firstpass" number="1,0,1,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Technology, Amplitude.Mercury.Firstpass" number="1,0,3,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Territory, Amplitude.Mercury.Firstpass" number="1,0,4,2,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TerritoryNode, Amplitude.Mercury.Firstpass" number="0,0,0,3,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TerritoryPathfindManager, Amplitude.Mercury.Firstpass" number="0,1,0,3,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TradeController, Amplitude.Mercury.Firstpass" number="2,0,2,20,0,1,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TradeNode, Amplitude.Mercury.Firstpass" number="1,0,0,3,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.TransitController, Amplitude.Mercury.Firstpass" number="0,1,0,0,0,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.Unit, Amplitude.Mercury.Firstpass" number="0,1,1,0,0,0,0,1"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.UnitCollection, Amplitude.Mercury.Firstpass" number="0,1,1,0,1,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.VisibilityController, Amplitude.Mercury.Firstpass" number="2,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.VisionWard, Amplitude.Mercury.Firstpass" number="1,0,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Simulation.World, Amplitude.Mercury.Firstpass" number="5,2,6,7,3,0,1,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.Landmark, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.LandmarkDatabase, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.SpawnPoint, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerrainSave, Amplitude.Mercury.Terrain" number="4,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerrainSaveDescriptor, Amplitude.Mercury.Terrain" number="7,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.Territory, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.TerritoryDatabase, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<?amplitude-serialization-serializer-revision type="Amplitude.Mercury.Terrain.WorldMapEntitiesProvider, Amplitude.Mercury.Terrain" number="1,0,0,0,0,0,0"?>
+<Document>
+    <TerrainSave>
+        <FormatRevision>10</FormatRevision>
+        <Width>150</Width>
+        <Height>88</Height>
+        <UseMapCycling>false</UseMapCycling>
+        <UseProceduralMountainChains>false</UseProceduralMountainChains>
+        <BiomeNames Length="10">
+            <String>Arctic</String>
+            <String>Badlands</String>
+            <String>Desert</String>
+            <String>Grassland</String>
+            <String>Mediterranean</String>
+            <String>Savanna</String>
+            <String>Taiga</String>
+            <String>Temperate</String>
+            <String>Tropical</String>
+            <String>Tundra</String>
+        </BiomeNames>
+        <TerrainTypeNames Length="15">
+            <String>CityTerrain</String>
+            <String>CoastalWater</String>
+            <String>DryGrass</String>
+            <String>Forest</String>
+            <String>Lake</String>
+            <String>Mountain</String>
+            <String>MountainSnow</String>
+            <String>Ocean</String>
+            <String>Prairie</String>
+            <String>RockyField</String>
+            <String>RockyForest</String>
+            <String>Sterile</String>
+            <String>StoneField</String>
+            <String>Wasteland</String>
+            <String>WoodLand</String>
+        </TerrainTypeNames>
+        <POINames Length="56">
+            <String>None</String>
+            <String>POI_NaturalModifier01</String>
+            <String>POI_NaturalModifier02</String>
+            <String>POI_NaturalModifier03</String>
+            <String>POI_NaturalModifier04</String>
+            <String>POI_NaturalModifier05</String>
+            <String>POI_NaturalModifier06</String>
+            <String>POI_NaturalModifier07</String>
+            <String>POI_NaturalModifier08</String>
+            <String>POI_NaturalModifier09</String>
+            <String>POI_NaturalModifier10</String>
+            <String>POI_NaturalModifier11</String>
+            <String>POI_NaturalModifier12</String>
+            <String>POI_NaturalModifier13</String>
+            <String>POI_NaturalModifier14</String>
+            <String>POI_NaturalModifier15</String>
+            <String>POI_NaturalModifier16</String>
+            <String>POI_NaturalModifier17</String>
+            <String>POI_NaturalModifier18</String>
+            <String>POI_NaturalModifier19</String>
+            <String>POI_NaturalModifier20</String>
+            <String>POI_NaturalModifier21</String>
+            <String>POI_NaturalModifier22</String>
+            <String>POI_NaturalModifier23</String>
+            <String>POI_NaturalModifier24</String>
+            <String>POI_ResourceDeposit01</String>
+            <String>POI_ResourceDeposit02</String>
+            <String>POI_ResourceDeposit03</String>
+            <String>POI_ResourceDeposit04</String>
+            <String>POI_ResourceDeposit05</String>
+            <String>POI_ResourceDeposit06</String>
+            <String>POI_ResourceDeposit07</String>
+            <String>POI_ResourceDeposit08</String>
+            <String>POI_ResourceDeposit09</String>
+            <String>POI_ResourceDeposit10</String>
+            <String>POI_ResourceDeposit11</String>
+            <String>POI_ResourceDeposit12</String>
+            <String>POI_ResourceDeposit13</String>
+            <String>POI_ResourceDeposit14</String>
+            <String>POI_ResourceDeposit15</String>
+            <String>POI_ResourceDeposit16</String>
+            <String>POI_ResourceDeposit17</String>
+            <String>POI_ResourceDeposit18</String>
+            <String>POI_ResourceDeposit19</String>
+            <String>POI_ResourceDeposit20</String>
+            <String>POI_ResourceDeposit21</String>
+            <String>POI_ResourceDeposit22</String>
+            <String>POI_ResourceDeposit23</String>
+            <String>POI_ResourceDeposit24</String>
+            <String>POI_ResourceDeposit25</String>
+            <String>POI_ResourceDeposit26</String>
+            <String>POI_ResourceDeposit27</String>
+            <String>POI_ResourceDeposit28</String>
+            <String>POI_ResourceDeposit29</String>
+            <String>POI_ResourceDeposit30</String>
+            <String>POI_ResourceDeposit31</String>
+        </POINames>
+        <NaturalWonderNames Length="14">
+            <String>DanakilDesert</String>
+            <String>GreatBarrierReef</String>
+            <String>GreatBlueHole</String>
+            <String>HalongBay</String>
+            <String>KawahIjen</String>
+            <String>LakeBaikal</String>
+            <String>LakeHillier</String>
+            <String>MountEverest</String>
+            <String>MountMulu</String>
+            <String>MountRoraima</String>
+            <String>MountVesuvius</String>
+            <String>PeritoMorenoGlacier</String>
+            <String>Vinicunca</String>
+            <String>Yellowstone</String>
+        </NaturalWonderNames>
+        <LandmarksDefinitionNames Length="5">
+            <String>Landmark_Desert</String>
+            <String>Landmark_Forest</String>
+            <String>Landmark_Lake</String>
+            <String>Landmark_Mountain</String>
+            <String>Landmark_River</String>
+        </LandmarksDefinitionNames>
+        <ElevationTexture.Width>150</ElevationTexture.Width>
+        <ElevationTexture.Height>88</ElevationTexture.Height>
+        <ElevationTexture.Format>4</ElevationTexture.Format>
+        <ElevationTexture.Bytes Length="316">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAAAs0lEQVR42u3SQQ0AAAjEMED5SccEH5JWwrJOwb2RAGNhLIwFxsJYGAuMhbEwFhgLY2EsMBbGwlhgLIyFscBYGAtjgbEwFsYCY2EsjAXGwlgYC4yFsTAWGAtjYSwwFsbCWGAsjIWxwFgYC2OBsTAWxgJjYSyMBcbCWBgLjIWxMBYYC2NhLDAWxsJYYCyMhbHAWBgLY4GxMBbGAmNhLIwFxsJYGAuMhbEwFhgLY2EsMBbG4o8FKJkBMOfZgisAAAAASUVORK5CYII=</ElevationTexture.Bytes>
+        <ZonesTexture.Width>150</ZonesTexture.Width>
+        <ZonesTexture.Height>88</ZonesTexture.Height>
+        <ZonesTexture.Format>4</ZonesTexture.Format>
+        <ZonesTexture.Bytes Length="4284">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</ZonesTexture.Bytes>
+        <POITexture.Width>150</POITexture.Width>
+        <POITexture.Height>88</POITexture.Height>
+        <POITexture.Format>4</POITexture.Format>
+        <POITexture.Bytes Length="176">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAAASUlEQVR42u3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfBvOmAABELJtmgAAAABJRU5ErkJggg==</POITexture.Bytes>
+        <VisibilityTexture.Width>150</VisibilityTexture.Width>
+        <VisibilityTexture.Height>88</VisibilityTexture.Height>
+        <VisibilityTexture.Format>4</VisibilityTexture.Format>
+        <VisibilityTexture.Bytes Length="316">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAAAs0lEQVR42u3SQQ0AAAjEMMC/58MEH5JWwrJOwb2RAGNhLIwFxsJYGAuMhbEwFhgLY2EsMBbGwlhgLIyFscBYGAtjgbEwFsYCY2EsjAXGwlgYC4yFsTAWGAtjYSwwFsbCWGAsjIWxwFgYC2OBsTAWxgJjYSyMBcbCWBgLjIWxMBYYC2NhLDAWxsJYYCyMhbHAWBgLY4GxMBbGAmNhLIwFxsJYGAuMhbEwFhgLY2EsMBbG4o8Fq3wBr/qUnOsAAAAASUVORK5CYII=</VisibilityTexture.Bytes>
+        <RoadTexture.Width>150</RoadTexture.Width>
+        <RoadTexture.Height>88</RoadTexture.Height>
+        <RoadTexture.Format>4</RoadTexture.Format>
+        <RoadTexture.Bytes Length="176">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAAASUlEQVR42u3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfBvOmAABELJtmgAAAABJRU5ErkJggg==</RoadTexture.Bytes>
+        <RiverTexture.Width>150</RiverTexture.Width>
+        <RiverTexture.Height>88</RiverTexture.Height>
+        <RiverTexture.Format>4</RiverTexture.Format>
+        <RiverTexture.Bytes Length="176">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAAASUlEQVR42u3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfBvOmAABELJtmgAAAABJRU5ErkJggg==</RiverTexture.Bytes>
+        <NaturalWonderTexture.Width>150</NaturalWonderTexture.Width>
+        <NaturalWonderTexture.Height>88</NaturalWonderTexture.Height>
+        <NaturalWonderTexture.Format>4</NaturalWonderTexture.Format>
+        <NaturalWonderTexture.Bytes Length="176">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAAASUlEQVR42u3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfBvOmAABELJtmgAAAABJRU5ErkJggg==</NaturalWonderTexture.Bytes>
+        <MatchingSeedTexture.Width>150</MatchingSeedTexture.Width>
+        <MatchingSeedTexture.Height>88</MatchingSeedTexture.Height>
+        <MatchingSeedTexture.Format>4</MatchingSeedTexture.Format>
+        <MatchingSeedTexture.Bytes Length="176">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAAASUlEQVR42u3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfBvOmAABELJtmgAAAABJRU5ErkJggg==</MatchingSeedTexture.Bytes>
+        <LandmarksTexture.Width>150</LandmarksTexture.Width>
+        <LandmarksTexture.Height>88</LandmarksTexture.Height>
+        <LandmarksTexture.Format>4</LandmarksTexture.Format>
+        <LandmarksTexture.Bytes Length="176">iVBORw0KGgoAAAANSUhEUgAAAJYAAABYCAYAAAAX4w4mAAAASUlEQVR42u3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfBvOmAABELJtmgAAAABJRU5ErkJggg==</LandmarksTexture.Bytes>
+        <LandmarkDatabase>
+            <Landmarks Length="0" />
+        </LandmarkDatabase>
+        <TerritoryDatabase>
+            <Territories Length="139">
+                <Item>
+                    <ContinentIndex>0</ContinentIndex>
+                    <Biome>0</Biome>
+                    <IsOcean>true</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>4</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>7</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+                <Item>
+                    <ContinentIndex>1</ContinentIndex>
+                    <Biome>3</Biome>
+                    <IsOcean>false</IsOcean>
+                </Item>
+            </Territories>
+        </TerritoryDatabase>
+        <EntitiesProvider>
+            <SpawnPoints Null="true" />
+        </EntitiesProvider>
+        <Author Null="true" />
+        <Description Null="true" />
+        <CreationDate>0</CreationDate>
+        <LastEditionDate>0</LastEditionDate>
+        <FailureFlags>0</FailureFlags>
+        <MapName Null="true" />
+        <DownloadContentNeeded>0</DownloadContentNeeded>
+    </TerrainSave>
+</Document>
