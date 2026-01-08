@@ -9,7 +9,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from hex_grid import (
+from utils.hex_grid import (
     HexGrid,
     offset_to_pixel,
     pixel_to_offset,

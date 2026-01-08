@@ -5,8 +5,8 @@ Tests for configuration system.
 import pytest
 from pathlib import Path
 
-from config_loader import get_config, reload_config
-from geo_hex_mapper import GeoHexMapper
+from utils.config_loader import get_config, reload_config
+from utils.geo_hex_mapper import GeoHexMapper
 
 
 class TestConfigLoader:

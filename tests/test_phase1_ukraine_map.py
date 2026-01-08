@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from humankind_map_parser import load_map, HumankindMap
+from utils.humankind_map_parser import load_map, HumankindMap
 
 
 # Path to test maps (in project root)
@@ -121,7 +121,7 @@ class TestPhase1CompactFormat:
 
     def test_save_and_load_compact_map(self, tmp_path):
         """Verify we can save and reload map in compact format."""
-        from humankind_map_parser import save_compact_map, load_compact_map
+        from utils.humankind_map_parser import save_compact_map, load_compact_map
 
         hmap_path = MAPS_DIR / "tiny_australia" / "The_Amplipodes.hmap"
         map_data = load_map(hmap_path)
@@ -145,7 +145,7 @@ class TestPhase1CompactFormat:
 
     def test_compact_format_preserves_territory_data(self, tmp_path):
         """Verify territory biomes and ocean flags are preserved."""
-        from humankind_map_parser import save_compact_map, load_compact_map
+        from utils.humankind_map_parser import save_compact_map, load_compact_map
 
         hmap_path = MAPS_DIR / "tiny_australia" / "The_Amplipodes.hmap"
         map_data = load_map(hmap_path)
@@ -166,7 +166,7 @@ class TestPhase1Rendering:
 
     def test_render_tiny_australia_map(self):
         """Verify rendering works and produces valid image."""
-        from humankind_map_renderer import render_map_simple, render_map_hex
+        from utils.humankind_map_renderer import render_map_simple, render_map_hex
 
         # Create test_outputs directory
         output_dir = Path(__file__).parent / "test_outputs"
@@ -208,7 +208,7 @@ class TestPhase1Rendering:
 
     def test_render_hex_map(self):
         """Verify hex rendering works and shows proper hexagonal shapes."""
-        from humankind_map_renderer import render_map_hex
+        from utils.humankind_map_renderer import render_map_hex
 
         # Create test_outputs directory
         output_dir = Path(__file__).parent / "test_outputs"
@@ -235,7 +235,7 @@ class TestPhase1Rendering:
         For tiny_australia: land should be at least 10% of visible area
         (conservative estimate since it's an Australia-focused map)
         """
-        from humankind_map_renderer import render_map_simple
+        from utils.humankind_map_renderer import render_map_simple
 
         # Create test_outputs directory
         output_dir = Path(__file__).parent / "test_outputs"

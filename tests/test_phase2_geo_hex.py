@@ -9,7 +9,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from geo_hex_mapper import GeoHexMapper
+from utils.geo_hex_mapper import GeoHexMapper
 
 
 # Ukraine bounding box (actual territory)
@@ -317,7 +317,7 @@ class TestPhase2Visualization:
             city_hexes[city_name] = (col, row)
 
         # Create hex grid visualization
-        from hex_grid import HexGrid
+        from utils.hex_grid import HexGrid
 
         # Use larger hex size for visibility
         hex_size = 8
@@ -395,7 +395,7 @@ class TestPhase2Visualization:
         output_dir = Path(__file__).parent / "test_outputs" / "phase2"
         output_dir.mkdir(parents=True, exist_ok=True)
 
-        from hex_grid import HexGrid
+        from utils.hex_grid import HexGrid
 
         hex_size = 8
         grid = HexGrid(width=150, height=88, hex_size=hex_size)
@@ -458,7 +458,7 @@ class TestPhase2Visualization:
             max_lat=MAP_BOUNDS["max_lat"],
         )
 
-        from hex_grid import HexGrid
+        from utils.hex_grid import HexGrid
 
         hex_size = 8
         grid = HexGrid(width=150, height=88, hex_size=hex_size)
@@ -601,7 +601,7 @@ class TestPhase2Visualization:
             max_lat=UKRAINE_BOUNDS["max_lat"],
         )
 
-        from hex_grid import HexGrid
+        from utils.hex_grid import HexGrid
 
         hex_size = 8
         grid = HexGrid(width=150, height=88, hex_size=hex_size)
