@@ -10,7 +10,7 @@ from typing import Tuple
 import numpy as np
 from pyproj import Transformer
 
-from hex_grid import HexGrid
+from .hex_grid import HexGrid
 
 
 class GeoHexMapper:

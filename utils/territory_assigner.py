@@ -8,7 +8,7 @@ to the appropriate Ukrainian raion (district) based on geographic containment.
 from typing import Dict, Tuple, Optional
 import geopandas as gpd
 from shapely.geometry import Point
-from geo_hex_mapper import GeoHexMapper
+from .geo_hex_mapper import GeoHexMapper
 
 
 class TerritoryAssigner:

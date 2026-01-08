@@ -17,10 +17,10 @@ import numpy as np
 from PIL import Image
 import geopandas as gpd
 
-from config_loader import get_config
-from geo_hex_mapper import GeoHexMapper
-from territory_assigner import TerritoryAssigner
-from biome_mapper import BiomeMapper
+from .config_loader import get_config
+from .geo_hex_mapper import GeoHexMapper
+from .territory_assigner import TerritoryAssigner
+from .biome_mapper import BiomeMapper
 
 
 @dataclass

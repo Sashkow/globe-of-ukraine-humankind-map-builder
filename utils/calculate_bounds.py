@@ -9,7 +9,7 @@ Given:
 Calculate map bounds that give exactly 6-hex margins.
 """
 
-from geo_hex_mapper import GeoHexMapper
+from .geo_hex_mapper import GeoHexMapper
 
 # Ukraine's actual boundaries
 UKRAINE_BOUNDS = {

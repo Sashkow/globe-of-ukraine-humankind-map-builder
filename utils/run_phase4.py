@@ -17,11 +17,11 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import numpy as np
 
-from config_loader import get_config
-from geo_hex_mapper import GeoHexMapper
-from hex_grid import HexGrid
-from territory_assigner import TerritoryAssigner
-from biome_mapper import BiomeMapper
+from .config_loader import get_config
+from .geo_hex_mapper import GeoHexMapper
+from .hex_grid import HexGrid
+from .territory_assigner import TerritoryAssigner
+from .biome_mapper import BiomeMapper
 
 
 def main():
