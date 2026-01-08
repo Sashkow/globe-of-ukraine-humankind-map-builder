@@ -12,7 +12,7 @@ uv sync
 uv run python incremental_map_builder.py
 
 # Run tests
-uv run pytest tests/ -v
+uv run -m pytest tests/ -v
 ```
 
 The generated map will be in `output/incremental/step10_spawn_points.hmap`. Copy it to your Humankind maps folder:

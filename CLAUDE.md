@@ -10,10 +10,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 # Run tests
-uv run pytest tests/ -v
+uv run -m pytest tests/ -v
 
 # Run single test
-uv run pytest tests/test_phase2_geo_hex.py::test_name -v
+uv run -m pytest tests/test_phase2_geo_hex.py::test_name -v
 
 # Generate map
 uv run python incremental_map_builder.py
