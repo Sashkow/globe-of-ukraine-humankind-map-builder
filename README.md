@@ -1,24 +1,47 @@
-# Humankind Map Tools - Complete Analysis & Generation Suite
+# Globe of Ukraine - Humankind Map Builder
 
-Comprehensive tools for analyzing and generating Humankind game maps with proper hexagonal grid support and real geographic data integration.
+A tool to generate Humankind game maps based on real Ukrainian geography. Implements the classic Ukrainian joke: Ukraine as the entire world, designed for multiplayer with friends from different Ukrainian regions.
 
-## 🎯 What We Accomplished
+## Quick Start
+
+```bash
+# Install dependencies
+uv sync
+
+# Generate the map
+uv run python incremental_map_builder.py
+
+# Run tests
+uv run pytest tests/ -v
+```
+
+The generated map will be in `output/incremental/step10_spawn_points.hmap`. Copy it to your Humankind maps folder:
+- **Windows:** `%USERPROFILE%\Documents\Humankind\Maps\`
+- **Linux (Steam/Proton):** `~/.steam/steam/steamapps/compatdata/1124300/pfx/drive_c/users/steamuser/Documents/Humankind/Maps/`
+
+## Features
+
+- **Real geographic data**: SRTM elevation, actual raion (district) boundaries, real rivers
+- **Incremental pipeline**: 10-step build process for terrain, biomes, elevation, rivers, features, and spawn points
+- **Copernicus land cover**: Automatic biome assignment from satellite data
+- **Configurable**: Adjust map bounds and settings in `config.yaml`
+
+## What We Built
 
 ### 1. **Complete Map Format Analysis**
 - Reverse-engineered the Humankind .hms and .hmap file formats
-- Analyzed actual game maps (Earth, Europe, South-East Europe)
 - Documented the XML structure, territory system, and hex grid encoding
-- Researched optimal region sizes (~50-90 hexes per territory)
+- See `docs/HUMANKIND_MAP_FORMAT.md` for details
 
-### 2. **Hexagonal Rendering System**
-- Created proper hexagonal visualization (not just square tiles!)
-- Renders maps showing actual hex grid used by the game
-- Color-coded by biome with customizable hex sizes
+### 2. **Geographic Data Integration**
+- Real Ukrainian raion boundaries from GeoJSON
+- SRTM elevation data for mountains
+- Copernicus land cover for biome classification
+- OSM waterways for river placement
 
-### 3. **Ukraine Map Generation**
-- Downloaded real TopoJSON geographic data for all 27 Ukrainian oblasts
-- Created hex grid mapping system matching Humankind's format
-- Generated playable map with realistic biome assignments
+### 3. **Incremental Map Builder**
+- 10-step pipeline building the map layer by layer
+- Each step outputs a playable .hmap file for testing
 
 ## 📚 Research Findings
 
@@ -273,27 +296,23 @@ Generated from real oblast boundary data with climate-appropriate biomes.
 8. **Elevation from SRTM** - Use real terrain elevation data
 9. **Climate-based biomes** - Auto-assign biomes from climate data APIs
 
-## 📖 How to Use Generated Maps
+## How to Use
 
 1. **Generate map:**
    ```bash
-   uv run python generate_ukraine_v2.py --hex-size 0.15 --output my_ukraine.hms
+   uv run python incremental_map_builder.py
    ```
 
-2. **Preview with hexagons:**
-   ```bash
-   uv run python render_hex_map.py my_ukraine.hms preview.png --hex --hex-size 20
-   ```
+2. **Copy to Humankind:**
+   - Copy `output/incremental/step10_spawn_points.hmap` to your maps folder
+   - Windows: `%USERPROFILE%\Documents\Humankind\Maps\`
+   - Linux: `~/.steam/steam/steamapps/compatdata/1124300/pfx/drive_c/users/steamuser/Documents/Humankind/Maps/`
 
-3. **Copy to Humankind:**
-   - Maps go in: `Documents/Humankind/User Content/Maps/`
-   - May need to package as .hmap (ZIP containing Descriptor.hmd + Save.hms)
-
-4. **Play in-game:**
+3. **Play in-game:**
    - Start new game
    - Select "Load Map"
-   - Choose your custom Ukraine map
-   - Each oblast becomes a territory to claim!
+   - Choose the Ukraine map
+   - Each raion becomes a territory to claim!
 
 ## 🔬 Analysis Files Studied
 
