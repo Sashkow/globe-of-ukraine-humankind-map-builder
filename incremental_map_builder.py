@@ -145,6 +145,235 @@ class IncrementalMapBuilder:
             zf.writestr('Descriptor.hmd', descriptor_content.encode('utf-8-sig'))
         print(f"  Saved: {output_path.name}")
 
+    # ==================== TERRAIN VALIDATION HELPERS ====================
+
+    # Invalid terrain types for spawn points (from bhktools resourceinfo.h)
+    INVALID_SPAWN_TERRAINS = {
+        'CoastalWater',  # index 1 - water
+        'Lake',          # index 4 - water
+        'Mountain',      # index 5 - impassable
+        'MountainSnow',  # index 6 - impassable
+        'Ocean',         # index 7 - water
+    }
+
+    # Terrain index mapping (must match TerrainTypeNames order in Save.hms)
+    TERRAIN_INDEX_TO_NAME = {
+        0: 'CityTerrain',
+        1: 'CoastalWater',
+        2: 'DryGrass',
+        3: 'Forest',
+        4: 'Lake',
+        5: 'Mountain',
+        6: 'MountainSnow',
+        7: 'Ocean',
+        8: 'Prairie',
+        9: 'RockyField',
+        10: 'RockyForest',
+        11: 'Sterile',
+        12: 'StoneField',
+        13: 'Wasteland',
+        14: 'WoodLand',
+    }
+
+    def _extract_elevation_texture(self, content: str) -> np.ndarray:
+        """Extract elevation texture as numpy array (height, width, 4) RGBA."""
+        pattern = r'<ElevationTexture\.Bytes Length="\d+">([^<]+)</ElevationTexture\.Bytes>'
+        match = re.search(pattern, content)
+        if not match:
+            raise ValueError("Could not find ElevationTexture.Bytes in content")
+
+        b64_data = match.group(1)
+        png_data = base64.b64decode(b64_data)
+        img = Image.open(io.BytesIO(png_data))
+        return np.array(img)
+
+    def _get_terrain_at_hex(self, elevation_array: np.ndarray, col: int, row: int) -> tuple[str, int]:
+        """
+        Get terrain type at a hex from elevation texture.
+
+        Returns:
+            (terrain_name, terrain_index) tuple
+        """
+        if row < 0 or row >= elevation_array.shape[0] or col < 0 or col >= elevation_array.shape[1]:
+            return ('Ocean', 7)  # Out of bounds = ocean
+
+        # G channel encodes terrain: G = (biome_variant << 4) | terrain_index
+        g_value = elevation_array[row, col, 1]
+        terrain_index = g_value & 0x0F  # Lower 4 bits
+        terrain_name = self.TERRAIN_INDEX_TO_NAME.get(terrain_index, 'Unknown')
+        return (terrain_name, terrain_index)
+
+    def _is_valid_spawn_location(self, elevation_array: np.ndarray, col: int, row: int) -> bool:
+        """
+        Check if a hex is valid for player spawn.
+
+        Valid spawn locations must be:
+        - On land (not ocean/coastal/lake)
+        - Not on impassable terrain (mountain/mountain snow)
+        """
+        terrain_name, _ = self._get_terrain_at_hex(elevation_array, col, row)
+        return terrain_name not in self.INVALID_SPAWN_TERRAINS
+
+    def _find_nearest_valid_spawn(self, elevation_array: np.ndarray, col: int, row: int,
+                                   max_search_radius: int = 10) -> tuple[int, int] | None:
+        """
+        Find nearest valid spawn location to the given coordinates.
+
+        Uses expanding ring search to find closest valid hex.
+
+        Returns:
+            (col, row) of valid spawn location, or None if not found within radius
+        """
+        # Check original location first
+        if self._is_valid_spawn_location(elevation_array, col, row):
+            return (col, row)
+
+        # Search in expanding rings
+        for radius in range(1, max_search_radius + 1):
+            candidates = []
+
+            # Get all hexes at this radius (simple rectangular approximation)
+            for dr in range(-radius, radius + 1):
+                for dc in range(-radius, radius + 1):
+                    # Only check ring perimeter
+                    if abs(dr) == radius or abs(dc) == radius:
+                        nc, nr = col + dc, row + dr
+                        if 0 <= nc < self.width and 0 <= nr < self.height:
+                            if self._is_valid_spawn_location(elevation_array, nc, nr):
+                                # Calculate distance (prefer closer hexes)
+                                dist = abs(dc) + abs(dr)
+                                candidates.append((dist, nc, nr))
+
+            if candidates:
+                # Return closest valid hex
+                candidates.sort()
+                return (candidates[0][1], candidates[0][2])
+
+        return None
+
+    def _get_hex_neighbors(self, col: int, row: int) -> list[tuple[int, int]]:
+        """Get neighboring hex coordinates in odd-r offset coordinate system."""
+        neighbors = []
+
+        if row % 2 == 0:  # Even row
+            offsets = [(-1, -1), (0, -1), (+1, 0), (0, +1), (-1, +1), (-1, 0)]
+        else:  # Odd row
+            offsets = [(0, -1), (+1, -1), (+1, 0), (+1, +1), (0, +1), (-1, 0)]
+
+        for dc, dr in offsets:
+            nc, nr = col + dc, row + dr
+            if 0 <= nc < self.width and 0 <= nr < self.height:
+                neighbors.append((nc, nr))
+
+        return neighbors
+
+    # ==================== NATURAL WONDER VALIDATION HELPERS ====================
+
+    # Natural wonder terrain requirements (from Humankind game logic)
+    # Each wonder type has preferred terrain types
+    WONDER_TERRAIN_REQUIREMENTS = {
+        # Mountain wonders - should be on mountain or high terrain
+        'MountEverest': {'preferred': ['Mountain', 'MountainSnow'], 'allowed': ['RockyField', 'StoneField']},
+        'MountVesuvius': {'preferred': ['Mountain'], 'allowed': ['RockyField', 'StoneField', 'Wasteland']},
+        'MountRoraima': {'preferred': ['Mountain', 'RockyField'], 'allowed': ['StoneField', 'Forest']},
+        'MountMulu': {'preferred': ['Mountain', 'RockyField'], 'allowed': ['Forest', 'RockyForest']},
+        'Vinicuna': {'preferred': ['Mountain', 'MountainSnow'], 'allowed': ['RockyField', 'Sterile']},
+
+        # Water wonders - should be on lake/coastal
+        'LakeBaikal': {'preferred': ['Lake'], 'allowed': ['CoastalWater']},
+        'LakeHillier': {'preferred': ['Lake'], 'allowed': ['CoastalWater']},
+        'GreatBlueHole': {'preferred': ['Ocean', 'CoastalWater'], 'allowed': ['Lake']},
+        'GreatBarrierReef': {'preferred': ['CoastalWater', 'Ocean'], 'allowed': []},
+        'HalongBay': {'preferred': ['CoastalWater'], 'allowed': ['Ocean', 'Lake']},
+
+        # Volcanic/Geothermal wonders
+        'KawahIjen': {'preferred': ['Mountain', 'Lake'], 'allowed': ['RockyField', 'Sterile']},
+        'Yellowstone': {'preferred': ['Forest', 'Prairie'], 'allowed': ['WoodLand', 'RockyField']},
+        'DanakilDesert': {'preferred': ['Wasteland', 'Sterile'], 'allowed': ['DryGrass']},
+
+        # Glacier wonder
+        'PeritoMorenoGlacier': {'preferred': ['MountainSnow', 'Lake'], 'allowed': ['Mountain', 'CoastalWater']},
+
+        # Other land wonders
+        'ChocolateHills': {'preferred': ['Prairie', 'DryGrass'], 'allowed': ['Forest', 'WoodLand']},
+    }
+
+    def _is_valid_wonder_location(self, elevation_array: np.ndarray, wonder_name: str,
+                                   col: int, row: int) -> tuple[bool, str]:
+        """
+        Check if a hex is valid for a specific natural wonder.
+
+        Returns:
+            (is_valid, reason) tuple
+        """
+        terrain_name, _ = self._get_terrain_at_hex(elevation_array, col, row)
+
+        # Get requirements for this wonder
+        requirements = self.WONDER_TERRAIN_REQUIREMENTS.get(wonder_name, {
+            'preferred': [],
+            'allowed': ['Prairie', 'Forest', 'WoodLand', 'DryGrass', 'RockyField']
+        })
+
+        if terrain_name in requirements.get('preferred', []):
+            return (True, f"preferred terrain ({terrain_name})")
+        elif terrain_name in requirements.get('allowed', []):
+            return (True, f"allowed terrain ({terrain_name})")
+        else:
+            return (False, f"invalid terrain ({terrain_name})")
+
+    def _find_valid_wonder_location(self, elevation_array: np.ndarray, wonder_name: str,
+                                     col: int, row: int, max_search_radius: int = 15) -> tuple[int, int] | None:
+        """
+        Find valid location for a natural wonder near given coordinates.
+
+        Searches in expanding rings, preferring 'preferred' terrain over 'allowed'.
+
+        Returns:
+            (col, row) of valid location, or None if not found
+        """
+        requirements = self.WONDER_TERRAIN_REQUIREMENTS.get(wonder_name, {
+            'preferred': [],
+            'allowed': ['Prairie', 'Forest', 'WoodLand', 'DryGrass', 'RockyField']
+        })
+
+        # Check original location first
+        is_valid, _ = self._is_valid_wonder_location(elevation_array, wonder_name, col, row)
+        if is_valid:
+            return (col, row)
+
+        # Search in expanding rings
+        preferred_candidates = []
+        allowed_candidates = []
+
+        for radius in range(1, max_search_radius + 1):
+            for dr in range(-radius, radius + 1):
+                for dc in range(-radius, radius + 1):
+                    if abs(dr) == radius or abs(dc) == radius:  # Ring perimeter
+                        nc, nr = col + dc, row + dr
+                        if 0 <= nc < self.width and 0 <= nr < self.height:
+                            terrain_name, _ = self._get_terrain_at_hex(elevation_array, nc, nr)
+                            dist = abs(dc) + abs(dr)
+
+                            if terrain_name in requirements.get('preferred', []):
+                                preferred_candidates.append((dist, nc, nr))
+                            elif terrain_name in requirements.get('allowed', []):
+                                allowed_candidates.append((dist, nc, nr))
+
+            # Return preferred first, then allowed
+            if preferred_candidates:
+                preferred_candidates.sort()
+                return (preferred_candidates[0][1], preferred_candidates[0][2])
+            elif allowed_candidates and radius >= 5:  # Only use allowed after searching a bit
+                allowed_candidates.sort()
+                return (allowed_candidates[0][1], allowed_candidates[0][2])
+
+        # Fall back to any allowed candidate
+        if allowed_candidates:
+            allowed_candidates.sort()
+            return (allowed_candidates[0][1], allowed_candidates[0][2])
+
+        return None
+
     def _update_texture_bytes(self, content: str, texture_name: str, new_base64: str) -> str:
         """Update a texture's base64 bytes in the save content."""
         pattern = rf'(<{texture_name}\.Bytes Length=")(\d+)(">)([^<]*)(</)'
@@ -1199,15 +1428,129 @@ class IncrementalMapBuilder:
         return output_path
 
     def step9_natural_wonders(self) -> Path:
-        """Step 9: Natural wonders (DISABLED - pass-through)."""
+        """Step 9: Add natural wonders with terrain validation."""
         print("\n" + "=" * 60)
-        print("STEP 9: Natural Wonders (SKIPPED)")
+        print("STEP 9: Natural Wonders (with terrain validation)")
         print("=" * 60)
-        print("  No changes - passing through from step 8")
+        print("  Change: NaturalWonderTexture + NaturalWonderNames")
 
-        # Just save current content without modification
+        from natural_wonder_mapper import UKRAINE_WONDERS, NATURAL_WONDER_NAMES
+
+        if not hasattr(self, 'current_save_content') or not self.current_save_content:
+            raise RuntimeError("Step 9 requires previous step content")
+
+        content = self.current_save_content
+
+        # Extract elevation texture for terrain validation
+        print("\n  Extracting elevation texture for terrain validation...")
+        elevation_array = self._extract_elevation_texture(content)
+        print(f"    Elevation texture shape: {elevation_array.shape}")
+
+        # Build wonder name to index mapping (1-based for texture)
+        wonder_indices = {name: idx + 1 for idx, name in enumerate(NATURAL_WONDER_NAMES)}
+
+        # Initialize wonder texture (all zeros = no wonders)
+        wonder_texture = np.zeros((self.height, self.width, 4), dtype=np.uint8)
+
+        # Get bounds
+        bounds = {
+            'min_lon': self.min_lon,
+            'max_lon': self.max_lon,
+            'min_lat': self.min_lat,
+            'max_lat': self.max_lat
+        }
+
+        print("\n  Placing natural wonders with terrain validation:")
+        placed_wonders = []
+
+        for wonder in UKRAINE_WONDERS:
+            wonder_name = wonder.humankind_name
+            if wonder_name not in wonder_indices:
+                print(f"    WARNING: Unknown wonder '{wonder_name}', skipping")
+                continue
+
+            # Convert geographic coordinates to pixel coordinates
+            col = int((wonder.lon - bounds['min_lon']) / (bounds['max_lon'] - bounds['min_lon']) * self.width)
+            row = int((bounds['max_lat'] - wonder.lat) / (bounds['max_lat'] - bounds['min_lat']) * self.height)
+
+            # Clamp to grid bounds
+            col = max(0, min(self.width - 1, col))
+            row = max(0, min(self.height - 1, row))
+
+            # Check if location is valid for this wonder type
+            is_valid, reason = self._is_valid_wonder_location(elevation_array, wonder_name, col, row)
+
+            if not is_valid:
+                print(f"    WARNING: {wonder.ukrainian_name} ({wonder_name}) at ({col}, {row}): {reason}")
+                # Find valid location
+                valid_pos = self._find_valid_wonder_location(elevation_array, wonder_name, col, row)
+                if valid_pos:
+                    old_col, old_row = col, row
+                    col, row = valid_pos
+                    _, new_reason = self._is_valid_wonder_location(elevation_array, wonder_name, col, row)
+                    print(f"      -> Adjusted to ({col}, {row}): {new_reason}")
+                else:
+                    print(f"      -> No valid terrain found, placing anyway at original location")
+
+            # Get hexes for this wonder (center + radius)
+            wonder_hexes = set()
+            for dr in range(-wonder.radius, wonder.radius + 1):
+                for dc in range(-wonder.radius, wonder.radius + 1):
+                    if abs(dr) + abs(dc) <= wonder.radius + (wonder.radius // 2):
+                        nc, nr = col + dc, row + dr
+                        if 0 <= nc < self.width and 0 <= nr < self.height:
+                            wonder_hexes.add((nc, nr))
+
+            # Place wonder
+            wonder_idx = wonder_indices[wonder_name]
+            for hc, hr in wonder_hexes:
+                wonder_texture[hr, hc, 0] = wonder_idx  # R = wonder index
+
+            placed_wonders.append({
+                'name': wonder.ukrainian_name,
+                'humankind_name': wonder_name,
+                'col': col,
+                'row': row,
+                'hexes': len(wonder_hexes)
+            })
+            terrain_name, _ = self._get_terrain_at_hex(elevation_array, col, row)
+            print(f"    {wonder.ukrainian_name} -> {wonder_name}: {len(wonder_hexes)} hexes at ({col}, {row}) - {terrain_name}")
+
+        # Encode wonder texture as PNG and base64
+        img = Image.fromarray(wonder_texture, mode='RGBA')
+        buffer = io.BytesIO()
+        img.save(buffer, format='PNG')
+        wonder_b64 = base64.b64encode(buffer.getvalue()).decode('ascii')
+
+        # Update NaturalWonderTexture in content
+        content = self._update_texture_bytes(content, 'NaturalWonderTexture', wonder_b64)
+
+        # Update NaturalWonderNames section
+        wonder_names_xml = f"""<NaturalWonderNames Length="{len(NATURAL_WONDER_NAMES)}">
+"""
+        for name in NATURAL_WONDER_NAMES:
+            wonder_names_xml += f"            <String>{name}</String>\n"
+        wonder_names_xml += "        </NaturalWonderNames>"
+
+        # Replace existing NaturalWonderNames
+        pattern = r'<NaturalWonderNames[^>]*>.*?</NaturalWonderNames>'
+        if re.search(pattern, content, re.DOTALL):
+            content = re.sub(pattern, wonder_names_xml, content, flags=re.DOTALL)
+        else:
+            # Try null pattern
+            null_pattern = r'<NaturalWonderNames\s+Null="true"\s*/>'
+            if re.search(null_pattern, content):
+                content = re.sub(null_pattern, wonder_names_xml, content)
+            else:
+                print("    WARNING: Could not find NaturalWonderNames section")
+
+        self.current_save_content = content
+
+        print(f"\n  Total wonders placed: {len(placed_wonders)}")
+        print(f"  Total wonder hexes: {sum(w['hexes'] for w in placed_wonders)}")
+
         output_path = self.output_dir / "step9_natural_wonders.hmap"
-        self._save_hmap(self.current_save_content, self.descriptor_content, output_path)
+        self._save_hmap(content, self.descriptor_content, output_path)
 
         return output_path
 
@@ -1251,9 +1594,14 @@ class IncrementalMapBuilder:
             config = yaml.safe_load(f)
         active = config['active_config']
         bounds = config['bounds'][active]
-        spawn_points = []
 
-        print("\n  City spawn points:")
+        # Extract elevation texture for terrain validation
+        print("\n  Extracting elevation texture for terrain validation...")
+        elevation_array = self._extract_elevation_texture(content)
+        print(f"    Elevation texture shape: {elevation_array.shape}")
+
+        spawn_points = []
+        print("\n  City spawn points (with terrain validation):")
         for city in SPAWN_CITIES:
             # Convert lat/lon to hex coordinates
             col = int((city['lon'] - bounds['min_lon']) / (bounds['max_lon'] - bounds['min_lon']) * self.width)
@@ -1263,16 +1611,36 @@ class IncrementalMapBuilder:
             col = max(0, min(self.width - 1, col))
             row = max(0, min(self.height - 1, row))
 
+            # Get terrain at original location
+            terrain_name, _ = self._get_terrain_at_hex(elevation_array, col, row)
+
+            # Validate spawn location
+            if not self._is_valid_spawn_location(elevation_array, col, row):
+                print(f"    WARNING: {city['name']} at ({col}, {row}) is on invalid terrain: {terrain_name}")
+                # Find nearest valid spawn
+                valid_pos = self._find_nearest_valid_spawn(elevation_array, col, row)
+                if valid_pos:
+                    old_col, old_row = col, row
+                    col, row = valid_pos
+                    new_terrain, _ = self._get_terrain_at_hex(elevation_array, col, row)
+                    print(f"      -> Adjusted to ({col}, {row}) - terrain: {new_terrain}")
+                else:
+                    print(f"      -> ERROR: No valid spawn found within radius, using original location")
+
             # Row inversion for file format: file_row = height - game_row - 1
             file_row = self.height - row - 1
+
+            # Get final terrain for display
+            final_terrain, _ = self._get_terrain_at_hex(elevation_array, col, row)
 
             spawn_points.append({
                 "name": city['name'],
                 "col": col,
                 "row": row,
-                "file_row": file_row
+                "file_row": file_row,
+                "terrain": final_terrain
             })
-            print(f"    {city['name']}: col={col}, row={row} (file_row={file_row})")
+            print(f"    {city['name']}: col={col}, row={row} (file_row={file_row}) - {final_terrain}")
 
         # Build SpawnPoints XML with proper indentation
         spawn_xml_items = []
