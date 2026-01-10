@@ -1562,23 +1562,17 @@ class IncrementalMapBuilder:
         print("  Change: SpawnPoints in EntitiesProvider")
 
         # Ukrainian cities with coordinates (lat, lon)
-        # Max 10 spawn points for Humankind
+        # Temporarily reduced to 2 for testing
         SPAWN_CITIES = [
-            # Kyiv - 2 spawn points (west and east bank)
-            {"name": "Kyiv (West Bank)", "lat": 50.45, "lon": 30.40},
-            {"name": "Kyiv (East Bank)", "lat": 50.45, "lon": 30.65},
-            # Dnipro - 2 spawn points (opposite banks)
-            {"name": "Dnipro (West Bank)", "lat": 48.46, "lon": 34.95},
-            {"name": "Dnipro (East Bank)", "lat": 48.46, "lon": 35.15},
-            # Other major cities - 1 each
-            {"name": "Kharkiv", "lat": 49.99, "lon": 36.23},
-            {"name": "Odesa", "lat": 46.48, "lon": 30.72},
+            {"name": "Kyiv", "lat": 50.45, "lon": 30.52},
             {"name": "Lviv", "lat": 49.84, "lon": 24.03},
-            {"name": "Zaporizhzhia", "lat": 47.84, "lon": 35.14},
-            # Shepetivka (user request)
-            {"name": "Shepetivka", "lat": 50.18, "lon": 27.06},
-            # One more major city
-            {"name": "Vinnytsia", "lat": 49.23, "lon": 28.48},
+            # Commented out for testing - uncomment to add more spawns:
+            # {"name": "Kharkiv", "lat": 49.99, "lon": 36.23},
+            # {"name": "Odesa", "lat": 46.48, "lon": 30.72},
+            # {"name": "Dnipro", "lat": 48.46, "lon": 35.05},
+            # {"name": "Zaporizhzhia", "lat": 47.84, "lon": 35.14},
+            # {"name": "Shepetivka", "lat": 50.18, "lon": 27.06},
+            # {"name": "Vinnytsia", "lat": 49.23, "lon": 28.48},
         ]
 
         # Use step9 content as base
@@ -1643,15 +1637,22 @@ class IncrementalMapBuilder:
             print(f"    {city['name']}: col={col}, row={row} (file_row={file_row}) - {final_terrain}")
 
         # Build SpawnPoints XML with proper indentation
+        # Flags indicate which player counts this spawn is valid for:
+        # Bit 0 (1) = 1 player, Bit 1 (2) = 2 players, etc.
+        num_spawns = len(spawn_points)
         spawn_xml_items = []
         for i, sp in enumerate(spawn_points):
-            # Flags = 1023 means valid for all player counts (1-10)
+            # Each spawn is valid from (i+1) players up to num_spawns
+            # First spawn: valid for 1+ players, Second: valid for 2+ players, etc.
+            flags = 0
+            for player_count in range(i + 1, num_spawns + 1):
+                flags |= (1 << (player_count - 1))
             spawn_xml_items.append(f"""            <Item>
                 <SpawnPoints>
                     <Column>{sp['col']}</Column>
                     <Row>{sp['file_row']}</Row>
                 </SpawnPoints>
-                <Flags>1023</Flags>
+                <Flags>{flags}</Flags>
             </Item>""")
 
         spawn_xml = f"""<SpawnPoints Length="{len(spawn_points)}">
@@ -1677,8 +1678,23 @@ class IncrementalMapBuilder:
 
         self.current_save_content = content
 
+        # Update EmpiresCount in descriptor to match spawn count
+        descriptor = self.descriptor_content
+        empires_pattern = r'<EmpiresCount>\d+</EmpiresCount>'
+        if re.search(empires_pattern, descriptor):
+            descriptor = re.sub(empires_pattern, f'<EmpiresCount>{num_spawns}</EmpiresCount>', descriptor)
+            print(f"  Updated EmpiresCount to {num_spawns}")
+        self.descriptor_content = descriptor
+
+        # Reset FailureFlags to 0 (clear any previous validation errors)
+        failure_pattern = r'<FailureFlags>\d+</FailureFlags>'
+        if re.search(failure_pattern, content):
+            content = re.sub(failure_pattern, '<FailureFlags>0</FailureFlags>', content)
+            print("  Reset FailureFlags to 0")
+        self.current_save_content = content
+
         output_path = self.output_dir / "step10_spawn_points.hmap"
-        self._save_hmap(content, self.descriptor_content, output_path)
+        self._save_hmap(content, descriptor, output_path)
 
         return output_path
 
